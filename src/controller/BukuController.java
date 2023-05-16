@@ -29,4 +29,31 @@ public class BukuController {
         BukuModel bm = new BukuModel(b);
         frame1.getTabelBuku().setModel(bm);
     }
+    
+    public void insert() {
+        Buku bk = new Buku();
+        bk.setKode_buku(frame1.getKodebuku().getText());
+        bk.setJudul(frame1.getJudul().getText());
+        bk.setKode_Penerbit(frame1.getPenerbit().getText());
+        bk.setPengarang(frame1.getPengarang().getText());
+        bk.setJml_buku(Integer.valueOf(frame1.getJml().getText()));
+        
+        implementBuku.insert(bk);
+    }
+    
+    public void update() {
+        Buku bk = new Buku();
+        bk.setKode_buku(frame1.getKodebuku().getText());
+        bk.setJudul(frame1.getJudul().getText());
+        bk.setKode_Penerbit(frame1.getPenerbit().getText());
+        bk.setPengarang(frame1.getPengarang().getText());
+        bk.setJml_buku(Integer.valueOf(frame1.getJml().getText()));
+        
+        implementBuku.update(bk);
+    }
+    
+    public void delete() {
+        String kode = frame1.getKodebuku().getText();
+        implementBuku.delete(kode);
+    }
 }
