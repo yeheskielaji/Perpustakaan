@@ -15,9 +15,8 @@ public class Perpustakaan {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        FrameUtama utama = new FrameUtama();
-        utama.setVisible(true);
-        utama.setLocationRelativeTo(null);
+//        FrameUtama utama = new FrameUtama();
+        Login login = new Login();
     }
     
 }
