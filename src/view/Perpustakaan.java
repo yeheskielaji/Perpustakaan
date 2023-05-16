@@ -15,7 +15,7 @@ public class Perpustakaan {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        FrameUtama utama = new FrameUtama();
+        FrameBuku utama = new FrameBuku();
         utama.setVisible(true);
         utama.setLocationRelativeTo(null);
     }

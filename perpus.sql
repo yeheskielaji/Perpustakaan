@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2023 at 12:28 PM
+-- Generation Time: May 16, 2023 at 07:37 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -29,10 +29,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `buku` (
   `Kode_buku` varchar(4) NOT NULL,
-  `Judul` varchar(20) DEFAULT NULL,
-  `Pengarang` varchar(15) DEFAULT NULL,
+  `Judul` varchar(40) DEFAULT NULL,
+  `Pengarang` varchar(40) DEFAULT NULL,
   `Jml_buku` int(11) DEFAULT NULL,
-  `Kode_penerbit` varchar(2) DEFAULT NULL
+  `Kode_penerbit` char(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -42,6 +42,7 @@ CREATE TABLE `buku` (
 INSERT INTO `buku` (`Kode_buku`, `Judul`, `Pengarang`, `Jml_buku`, `Kode_penerbit`) VALUES
 ('BD01', 'dBase III plus', 'Epsi B', 5, '01'),
 ('BD04', 'Clipper', 'Ahmad G', 4, '02'),
+('BD44', 'Kama Sutra', 'Adolf Hitler', 5, '32'),
 ('FI01', 'Fisika', 'Sutrisno', 10, '04'),
 ('S001', 'DOS', 'M.Urip', 10, '01');
 
@@ -52,10 +53,10 @@ INSERT INTO `buku` (`Kode_buku`, `Judul`, `Pengarang`, `Jml_buku`, `Kode_penerbi
 --
 
 CREATE TABLE `mahasiswa` (
-  `Nim` char(9) NOT NULL,
-  `Nama` char(20) DEFAULT NULL,
-  `Alamat` char(20) DEFAULT NULL,
-  `Kota` char(15) DEFAULT NULL,
+  `Nim` varchar(9) NOT NULL,
+  `Nama` varchar(40) DEFAULT NULL,
+  `Alamat` varchar(40) DEFAULT NULL,
+  `Kota` varchar(20) DEFAULT NULL,
   `TglLhr` datetime DEFAULT NULL,
   `Jenis_kel` char(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -78,7 +79,7 @@ INSERT INTO `mahasiswa` (`Nim`, `Nama`, `Alamat`, `Kota`, `TglLhr`, `Jenis_kel`)
 
 CREATE TABLE `penerbit` (
   `Kode_penerbit` char(2) NOT NULL,
-  `Nm_penerbit` char(15) DEFAULT NULL
+  `Nm_penerbit` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -99,8 +100,8 @@ INSERT INTO `penerbit` (`Kode_penerbit`, `Nm_penerbit`) VALUES
 
 CREATE TABLE `pinjam` (
   `Tgl_pinjam` datetime NOT NULL,
-  `Mhs_no_induk` char(9) DEFAULT NULL,
-  `Buk_kode_buku` char(4) DEFAULT NULL,
+  `Mhs_nim` varchar(9) DEFAULT NULL,
+  `Buk_kode_buku` varchar(4) DEFAULT NULL,
   `Tgl_hrs_kembali` datetime DEFAULT NULL,
   `Tgl_kembali` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -109,7 +110,7 @@ CREATE TABLE `pinjam` (
 -- Dumping data for table `pinjam`
 --
 
-INSERT INTO `pinjam` (`Tgl_pinjam`, `Mhs_no_induk`, `Buk_kode_buku`, `Tgl_hrs_kembali`, `Tgl_kembali`) VALUES
+INSERT INTO `pinjam` (`Tgl_pinjam`, `Mhs_nim`, `Buk_kode_buku`, `Tgl_hrs_kembali`, `Tgl_kembali`) VALUES
 ('2003-04-20 00:00:00', '123010001', 'S001', '2003-04-23 00:00:00', '2003-04-23 00:00:00'),
 ('2003-04-20 00:00:00', '123010002', 'BD01', '2003-04-23 00:00:00', '2003-04-22 00:00:00'),
 ('2003-04-20 00:00:00', '123010003', 'BD04', '2003-04-23 00:00:00', '2003-04-24 00:00:00'),

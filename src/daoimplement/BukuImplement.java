@@ -11,8 +11,8 @@ import models.*;
  * @author andra
  */
 public interface BukuImplement {
-    public void create(Buku b);
+    public void insert(Buku b);
     public void update(Buku b);
-    public void delete(Buku b);
+    public void delete(String kode);
     public List<Buku> getData();
 }
