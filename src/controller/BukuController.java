@@ -7,18 +7,18 @@ import java.util.List;
 import daobuku.BukuDAO;
 import daoimplement.BukuImplement;
 import models.*;
-import view.FrameUtama;
+import view.FrameBuku;
 
 /**
  *
  * @author andra
  */
 public class BukuController {
-    FrameUtama frame1;
+    FrameBuku frame1;
     BukuImplement implementBuku;
     List<Buku> b;
     
-    public BukuController(FrameUtama frame1) {
+    public BukuController(FrameBuku frame1) {
         this.frame1 = frame1;
         implementBuku = new BukuDAO();
         b = implementBuku.getData();
