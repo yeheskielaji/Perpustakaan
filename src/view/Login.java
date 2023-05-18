@@ -2,6 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+<<<<<<< Updated upstream:src/view/Login.java
 package view;
 
 import javax.swing.JFrame;
@@ -9,6 +10,13 @@ import javax.swing.JFrame;
 /**
  *
  * @author LENOVO
+=======
+package perpustakaan;
+
+/**
+ *
+ * @author Yeheskiel Aji
+>>>>>>> Stashed changes:src/perpustakaan/Login.java
  */
 public class Login extends javax.swing.JFrame {
 
@@ -17,11 +25,14 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+<<<<<<< Updated upstream:src/view/Login.java
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(400,225);
 //        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+=======
+>>>>>>> Stashed changes:src/perpustakaan/Login.java
     }
 
     /**
@@ -33,6 +44,7 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+<<<<<<< Updated upstream:src/view/Login.java
         jDesktopPane3 = new javax.swing.JDesktopPane();
         jTextField1 = new javax.swing.JTextField();
         jDesktopPane6 = new javax.swing.JDesktopPane();
@@ -95,10 +107,15 @@ public class Login extends javax.swing.JFrame {
 
         jLabel1.setText("LOGIN");
 
+=======
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+>>>>>>> Stashed changes:src/perpustakaan/Login.java
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< Updated upstream:src/view/Login.java
             .addGroup(layout.createSequentialGroup()
                 .addGap(92, 92, 92)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -120,11 +137,19 @@ public class Login extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jDesktopPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(87, Short.MAX_VALUE))
+=======
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+>>>>>>> Stashed changes:src/perpustakaan/Login.java
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< Updated upstream:src/view/Login.java
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
@@ -133,6 +158,8 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
 
+=======
+>>>>>>> Stashed changes:src/perpustakaan/Login.java
     /**
      * @param args the command line arguments
      */
@@ -169,6 +196,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< Updated upstream:src/view/Login.java
     private javax.swing.JDesktopPane jDesktopPane3;
     private javax.swing.JDesktopPane jDesktopPane4;
     private javax.swing.JDesktopPane jDesktopPane5;
@@ -178,5 +206,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+=======
+>>>>>>> Stashed changes:src/perpustakaan/Login.java
     // End of variables declaration//GEN-END:variables
 }
