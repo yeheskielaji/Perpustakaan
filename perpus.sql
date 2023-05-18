@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2023 at 07:37 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Waktu pembuatan: 18 Bulan Mei 2023 pada 15.58
+-- Versi server: 10.4.28-MariaDB
+-- Versi PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,32 +24,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `buku`
+-- Struktur dari tabel `buku`
 --
 
 CREATE TABLE `buku` (
   `Kode_buku` varchar(4) NOT NULL,
-  `Judul` varchar(40) DEFAULT NULL,
-  `Pengarang` varchar(40) DEFAULT NULL,
-  `Jml_buku` int(11) DEFAULT NULL,
-  `Kode_penerbit` char(2) DEFAULT NULL
+  `Judul` varchar(40) NOT NULL,
+  `Pengarang` varchar(40) NOT NULL,
+  `Jml_buku` int(11) NOT NULL,
+  `Kode_penerbit` char(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `buku`
+-- Dumping data untuk tabel `buku`
 --
 
 INSERT INTO `buku` (`Kode_buku`, `Judul`, `Pengarang`, `Jml_buku`, `Kode_penerbit`) VALUES
 ('BD01', 'dBase III plus', 'Epsi B', 5, '01'),
 ('BD04', 'Clipper', 'Ahmad G', 4, '02'),
-('BD44', 'Kama Sutra', 'Adolf Hitler', 5, '32'),
+('BD44', 'Kama Sutra', 'Adlof Hitler', 5, '02'),
 ('FI01', 'Fisika', 'Sutrisno', 10, '04'),
 ('S001', 'DOS', 'M.Urip', 10, '01');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mahasiswa`
+-- Struktur dari tabel `mahasiswa`
 --
 
 CREATE TABLE `mahasiswa` (
@@ -62,7 +62,7 @@ CREATE TABLE `mahasiswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `mahasiswa`
+-- Dumping data untuk tabel `mahasiswa`
 --
 
 INSERT INTO `mahasiswa` (`Nim`, `Nama`, `Alamat`, `Kota`, `TglLhr`, `Jenis_kel`) VALUES
@@ -74,28 +74,28 @@ INSERT INTO `mahasiswa` (`Nim`, `Nama`, `Alamat`, `Kota`, `TglLhr`, `Jenis_kel`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penerbit`
+-- Struktur dari tabel `penerbit`
 --
 
 CREATE TABLE `penerbit` (
   `Kode_penerbit` char(2) NOT NULL,
-  `Nm_penerbit` varchar(20) DEFAULT NULL
+  `Nm_penerbit` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `penerbit`
+-- Dumping data untuk tabel `penerbit`
 --
 
 INSERT INTO `penerbit` (`Kode_penerbit`, `Nm_penerbit`) VALUES
-('01', 'Piksi ITB'),
-('02', 'Ganesha'),
-('03', 'Epsilon'),
-('04', 'Gramedia');
+('1', 'Piksi ITB'),
+('2', 'Ghanesha'),
+('3', 'Epsilon'),
+('4', 'Gramedia');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pinjam`
+-- Struktur dari tabel `pinjam`
 --
 
 CREATE TABLE `pinjam` (
@@ -107,7 +107,7 @@ CREATE TABLE `pinjam` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `pinjam`
+-- Dumping data untuk tabel `pinjam`
 --
 
 INSERT INTO `pinjam` (`Tgl_pinjam`, `Mhs_nim`, `Buk_kode_buku`, `Tgl_hrs_kembali`, `Tgl_kembali`) VALUES
@@ -123,22 +123,47 @@ INSERT INTO `pinjam` (`Tgl_pinjam`, `Mhs_nim`, `Buk_kode_buku`, `Tgl_hrs_kembali
 --
 
 --
--- Indexes for table `buku`
+-- Indeks untuk tabel `buku`
 --
 ALTER TABLE `buku`
-  ADD PRIMARY KEY (`Kode_buku`);
+  ADD PRIMARY KEY (`Kode_buku`),
+  ADD KEY `Kode_penerbit` (`Kode_penerbit`);
 
 --
--- Indexes for table `mahasiswa`
+-- Indeks untuk tabel `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`Nim`);
 
 --
--- Indexes for table `penerbit`
+-- Indeks untuk tabel `penerbit`
 --
 ALTER TABLE `penerbit`
   ADD PRIMARY KEY (`Kode_penerbit`);
+
+--
+-- Indeks untuk tabel `pinjam`
+--
+ALTER TABLE `pinjam`
+  ADD KEY `Mhs_nim` (`Mhs_nim`),
+  ADD KEY `Buk_kode_buku` (`Buk_kode_buku`);
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `buku`
+--
+ALTER TABLE `buku`
+  ADD CONSTRAINT `buku_ibfk_1` FOREIGN KEY (`Kode_penerbit`) REFERENCES `penerbit` (`Kode_penerbit`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Ketidakleluasaan untuk tabel `pinjam`
+--
+ALTER TABLE `pinjam`
+  ADD CONSTRAINT `pinjam_ibfk_1` FOREIGN KEY (`Mhs_nim`) REFERENCES `mahasiswa` (`Nim`),
+  ADD CONSTRAINT `pinjam_ibfk_2` FOREIGN KEY (`Buk_kode_buku`) REFERENCES `buku` (`Kode_buku`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
