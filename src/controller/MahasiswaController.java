@@ -4,7 +4,7 @@
  */
 package controller;
 import java.util.List;
-import daobuku.MahasiswaDAO;
+import daotabel.MahasiswaDAO;
 import daoimplement.MahasiswaImplement;
 import models.*;
 import view.FrameMahasiswa;

@@ -44,7 +44,7 @@ public class FrameMahasiswa extends javax.swing.JFrame {
         btnSimpan = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
-        TglLhr = new javax.swing.JFormattedTextField("####-##-##");
+        TglLhr = new javax.swing.JFormattedTextField();
         perempuan = new javax.swing.JRadioButton();
         laki = new javax.swing.JRadioButton();
 
@@ -101,7 +101,7 @@ public class FrameMahasiswa extends javax.swing.JFrame {
             }
         });
 
-        TglLhr.setText("jFormattedTextField1");
+        TglLhr.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("y-MM-dd"))));
 
         buttonGroup1.add(perempuan);
         perempuan.setText("Perempuan");
@@ -126,26 +126,22 @@ public class FrameMahasiswa extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(nim)
-                            .addComponent(nama)
-                            .addComponent(alamat)
-                            .addComponent(kota)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnSimpan)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnUpdate))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addComponent(btnDelete))
-                            .addComponent(TglLhr, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(laki)
-                            .addComponent(perempuan))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(nim)
+                        .addComponent(nama)
+                        .addComponent(alamat)
+                        .addComponent(kota)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btnSimpan)
+                            .addGap(18, 18, 18)
+                            .addComponent(btnUpdate))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(44, 44, 44)
+                            .addComponent(btnDelete))
+                        .addComponent(TglLhr, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE))
+                    .addComponent(laki)
+                    .addComponent(perempuan))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(

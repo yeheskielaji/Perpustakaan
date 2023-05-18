@@ -19,6 +19,9 @@ public class Perpustakaan {
         utama.setVisible(true);
         utama.setLocationRelativeTo(null);
         Login login = new Login();
+        
+        FrameMahasiswa mahasiswa = new FrameMahasiswa();
+        mahasiswa.setVisible(true);
     }
     
 }

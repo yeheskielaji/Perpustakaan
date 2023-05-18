@@ -4,7 +4,7 @@
  */
 package controller;
 import java.util.List;
-import daobuku.BukuDAO;
+import daotabel.BukuDAO;
 import daoimplement.BukuImplement;
 import models.*;
 import view.FrameBuku;
