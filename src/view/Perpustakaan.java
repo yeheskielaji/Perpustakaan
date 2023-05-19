@@ -18,8 +18,7 @@ public class Perpustakaan {
         FrameBuku utama = new FrameBuku();
         utama.setVisible(true);
         utama.setLocationRelativeTo(null);
-        Login login = new Login();
-        
+      
         FrameMahasiswa mahasiswa = new FrameMahasiswa();
         mahasiswa.setVisible(true);
     }
