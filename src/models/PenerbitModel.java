@@ -10,36 +10,30 @@ import javax.swing.table.AbstractTableModel;
  *
  * @author andra
  */
-public class BukuModel extends AbstractTableModel {
+public class PenerbitModel extends AbstractTableModel {
 
-    List<Buku> buku;
-    public BukuModel(List<Buku> buku) {
-        this.buku = buku;
+    List<Penerbit> penerbit;
+    public PenerbitModel(List<Penerbit> penerbit) {
+        this.penerbit = penerbit;
     }
     
     @Override
     public int getRowCount() {
-        return buku.size();
+        return penerbit.size();
     }
 
     @Override
     public int getColumnCount() {
-        return 5;
+        return 2;
     }
     
     @Override
     public String getColumnName(int column) {
         switch (column) {
             case 0:
-                 return "Kode buku";
-            case 1:
-                 return "Judul";
-            case 2:
-                 return "Pengarang";
-            case 3:
-                 return "Jumlah Buku";
-            case 4:
                  return "Kode Penerbit";
+            case 1:
+                 return "Nama Penerbit";
             default:
                 return null;
         }
@@ -49,15 +43,9 @@ public class BukuModel extends AbstractTableModel {
     public Object getValueAt(int row, int column) {
         switch (column) {
                 case 0:
-                     return buku.get(row).getKode_buku();
+                     return penerbit.get(row).getKode_penerbit();
                 case 1:
-                     return buku.get(row).getJudul();
-                case 2:
-                     return buku.get(row).getPengarang();
-                case 3:
-                     return buku.get(row).getJml_buku();
-                case 4:
-                     return buku.get(row).getKode_Penerbit();
+                     return penerbit.get(row).getNm_penerbit();
                 default:
                     return null;
             }

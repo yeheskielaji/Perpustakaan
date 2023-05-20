@@ -15,12 +15,14 @@ public class Perpustakaan {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        FrameBuku utama = new FrameBuku();
-        utama.setVisible(true);
-        utama.setLocationRelativeTo(null);
-      
+//        FrameBuku utama = new FrameBuku();
+//        utama.setVisible(true);
+//        utama.setLocationRelativeTo(null);
+//      
         FrameMahasiswa mahasiswa = new FrameMahasiswa();
         mahasiswa.setVisible(true);
+          FrameInput frame = new FrameInput();
+          frame.setVisible(true);
     }
     
 }

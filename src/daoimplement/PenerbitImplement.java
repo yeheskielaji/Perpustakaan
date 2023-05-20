@@ -10,10 +10,10 @@ import models.*;
  *
  * @author andra
  */
-public interface BukuImplement {
-    public void insert(Buku b);
-    public void update(Buku b);
-    public void delete(String kode);
-    public boolean cek(String kode);
-    public List<Buku> getData();
+public interface PenerbitImplement {
+    public void insert(Penerbit p);
+    public void update(Penerbit p);
+    public void delete(String id);
+    public boolean cek(String id);
+    public List<Penerbit> getData();
 }

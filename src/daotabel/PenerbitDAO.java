@@ -10,42 +10,34 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import koneksi.Connector;
 import models.*;
-import daoimplement.BukuImplement;
+import daoimplement.PenerbitImplement;
 
 /**
  *
  * @author andra
  */
-public class BukuDAO implements BukuImplement {
+public class PenerbitDAO implements PenerbitImplement {
 
     Connection koneksi;
 
-    final String read = "SELECT * FROM buku";
-    final String insert = "INSERT INTO buku (Kode_buku, Judul, Pengarang, Jml_buku, Kode_penerbit) VALUES (?,?,?,?,?)";
-    final String update = "UPDATE buku SET Judul=?,Pengarang=?,Jml_buku=?, Kode_penerbit=? WHERE Kode_buku=?";
-    final String delete = "DELETE FROM buku WHERE Kode_buku=?";
-    final String cek = "SELECT COUNT(*) FROM buku WHERE Kode_buku = ?";
-    
-    public BukuDAO() {
+    final String read = "SELECT * FROM penerbit";
+    final String insert = "INSERT INTO penerbit(Kode_penerbit, Nm_penerbit) VALUES (?,?)";
+    final String update = "UPDATE penerbit SET Nm_penerbit=? WHERE Kode_penerbit=?";
+    final String delete = "DELETE FROM penerbit WHERE Kode_penerbit=?";
+    final String cek = "SELECT COUNT(*) FROM penerbit WHERE Kode_penerbit = ?";
+
+    public PenerbitDAO() {
         koneksi = Connector.connection();
     }
 
     @Override
-    public void insert(Buku b) {
+    public void insert(Penerbit p) {
         PreparedStatement statement = null;
         try {
             statement = koneksi.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
-            statement.setString(1, b.getKode_buku());
-            statement.setString(2, b.getJudul());
-            statement.setString(3, b.getPengarang());
-            statement.setInt(4, b.getJml_buku());
-            statement.setString(5, b.getKode_Penerbit());
+            statement.setString(1, p.getKode_penerbit());
+            statement.setString(2, p.getNm_penerbit());
             statement.executeUpdate();
-//            ResultSet rs = statement.getGeneratedKeys();
-
-//            while (rs.next()) {
-//                b.setKode_buku(rs.getInt(1));
-//            }
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -59,22 +51,13 @@ public class BukuDAO implements BukuImplement {
     }
 
     @Override
-    public void update(Buku b) {
+    public void update(Penerbit p) {
         PreparedStatement statement = null;
         try {
             statement = koneksi.prepareStatement(update);
-            statement.setString(1, b.getJudul());
-            statement.setString(2, b.getPengarang());
-            statement.setInt(3, b.getJml_buku());
-            statement.setString(4, b.getKode_Penerbit());
-            statement.setString(5, b.getKode_buku());
-
+            statement.setString(1, p.getNm_penerbit());
+            statement.setString(2, p.getKode_penerbit());
             statement.executeUpdate();
-//            ResultSet rs = statement.getGeneratedKeys();
-
-//            while (rs.next()) {
-//                b.setKode_buku(rs.getInt(1));
-//            }
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -88,16 +71,15 @@ public class BukuDAO implements BukuImplement {
     }
 
     @Override
-    public void delete(String kode) {
+    public void delete(String id) {
         PreparedStatement statement = null;
-        
+
         try {
             statement = koneksi.prepareStatement(delete);
-            
-            statement.setString(1,kode);
+
+            statement.setString(1, id);
             statement.executeUpdate();
-            
-            
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -107,14 +89,13 @@ public class BukuDAO implements BukuImplement {
                 e.printStackTrace();
             }
         }
-
     }
-    
+
     @Override
-    public boolean cek(String kode) {
+    public boolean cek(String id) {
         try{
             PreparedStatement statement = koneksi.prepareStatement(cek);
-            statement.setString(1, kode);
+            statement.setString(1, id);
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
@@ -131,25 +112,23 @@ public class BukuDAO implements BukuImplement {
     }
 
     @Override
-    public List<Buku> getData() {
-        List<Buku> b = null;
+    public List<Penerbit> getData() {
+        List<Penerbit> p = null;
         try {
-            b = new ArrayList<Buku>();
+            p = new ArrayList<Penerbit>();
             Statement ss = koneksi.createStatement();
             ResultSet rs = ss.executeQuery(read);
             while (rs.next()) {
-                Buku buku1 = new Buku();
-                buku1.setKode_buku(rs.getString("Kode_buku"));
-                buku1.setJudul(rs.getString("Judul"));
-                buku1.setPengarang(rs.getString("Pengarang"));
-                buku1.setJml_buku(rs.getInt("Jml_buku"));
-                buku1.setKode_Penerbit(rs.getString("Kode_penerbit"));
-                b.add(buku1);
+                Penerbit penerbit1 = new Penerbit();
+                penerbit1.setKode_penerbit(rs.getString("Kode_penerbit"));
+                penerbit1.setNm_penerbit(rs.getString("Nm_penerbit"));
+               
+                p.add(penerbit1);
             }
 
         } catch (SQLException e) {
-            Logger.getLogger(BukuDAO.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(PenerbitDAO.class.getName()).log(Level.SEVERE, null, e);
         }
-        return b;
+        return p;
     }
 }

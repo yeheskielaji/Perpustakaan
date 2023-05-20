@@ -31,7 +31,7 @@ public class MahasiswaModel extends AbstractTableModel {
     public String getColumnName(int column) {
         switch (column) {
             case 0:
-                 return "Nim";
+                 return "NIM";
             case 1:
                  return "Nama";
             case 2:
@@ -39,9 +39,9 @@ public class MahasiswaModel extends AbstractTableModel {
             case 3:
                  return "Kota";
             case 4:
-                 return "TglLhr";
+                 return "Tanggal Lahir";
             case 5:
-                 return "Jenis_kel";
+                 return "Jenis Kelamin";
             default:
                 return null;
         }

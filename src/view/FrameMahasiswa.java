@@ -184,12 +184,16 @@ public class FrameMahasiswa extends javax.swing.JFrame {
 
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
         // TODO add your handling code here:
-        mc.cek();
-        
-        if (mc.cek()) {
+
+        if (nim.getText().equals("")||nama.getText().equals("")||alamat.getText().equals("")||kota.getText().equals("")||TglLhr.getText().equals("")||(!laki.isSelected()&&!perempuan.isSelected())) {
+            JOptionPane.showMessageDialog(null, "Input blm lengkap", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            if (mc.cek()) {
                     JOptionPane.showMessageDialog(null, "NIM Sudah Ada", "Error", JOptionPane.ERROR_MESSAGE);
-        } else  mc.insert();
-        mc.isitabel();
+            } else  mc.insert();
+        }
+            mc.isitabel();    
+        
     }//GEN-LAST:event_btnSimpanActionPerformed
 
     private void nimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nimActionPerformed

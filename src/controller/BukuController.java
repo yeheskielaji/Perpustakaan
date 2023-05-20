@@ -7,18 +7,20 @@ import java.util.List;
 import daotabel.BukuDAO;
 import daoimplement.BukuImplement;
 import models.*;
-import view.FrameBuku;
+//import view.FrameBuku;
+import view.FrameInput;
+
 
 /**
  *
  * @author andra
  */
 public class BukuController {
-    FrameBuku frame1;
+    FrameInput frame1;
     BukuImplement implementBuku;
     List<Buku> b;
     
-    public BukuController(FrameBuku frame1) {
+    public BukuController(FrameInput frame1) {
         this.frame1 = frame1;
         implementBuku = new BukuDAO();
         b = implementBuku.getData();
@@ -55,5 +57,10 @@ public class BukuController {
     public void delete() {
         String kode = frame1.getKodebuku().getText();
         implementBuku.delete(kode);
+    }
+    
+    public boolean cek() {
+        String kode = frame1.getKodebuku().getText();
+        return implementBuku.cek(kode);
     }
 }
