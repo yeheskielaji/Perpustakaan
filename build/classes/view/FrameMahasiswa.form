@@ -165,15 +165,27 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nimActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="nim.setDocument(new JTextFieldLimit(9));"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="alamat">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="alamat.setDocument(new JTextFieldLimit(40));"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="nama">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="nama.setDocument(new JTextFieldLimit(40));"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="kota">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kotaActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="kota.setDocument(new JTextFieldLimit(20));"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="btnSimpan">
       <Properties>

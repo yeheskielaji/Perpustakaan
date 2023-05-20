@@ -175,6 +175,11 @@ public class FrameMahasiswa extends javax.swing.JFrame {
                 .addContainerGap(48, Short.MAX_VALUE))
         );
 
+        nim.setDocument(new JTextFieldLimit(9));
+        alamat.setDocument(new JTextFieldLimit(40));
+        nama.setDocument(new JTextFieldLimit(40));
+        kota.setDocument(new JTextFieldLimit(20));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
