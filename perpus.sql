@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Bulan Mei 2023 pada 15.58
+-- Waktu pembuatan: 20 Bulan Mei 2023 pada 09.19
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -40,11 +40,11 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`Kode_buku`, `Judul`, `Pengarang`, `Jml_buku`, `Kode_penerbit`) VALUES
-('BD01', 'dBase III plus', 'Epsi B', 5, '01'),
-('BD04', 'Clipper', 'Ahmad G', 4, '02'),
-('BD44', 'Kama Sutra', 'Adlof Hitler', 5, '02'),
-('FI01', 'Fisika', 'Sutrisno', 10, '04'),
-('S001', 'DOS', 'M.Urip', 10, '01');
+('BD01', 'dBase III plus', 'Epsi B', 5, '1'),
+('BD04', 'Clipper', 'Ahmad G', 4, '2'),
+('BD44', 'Kama Sutra', 'Adlof Hitler', 5, '3'),
+('FI01', 'Fisika', 'Sutrisno', 10, '4'),
+('S001', 'DOS', 'M.Urip', 10, '1');
 
 -- --------------------------------------------------------
 
@@ -156,7 +156,7 @@ ALTER TABLE `pinjam`
 -- Ketidakleluasaan untuk tabel `buku`
 --
 ALTER TABLE `buku`
-  ADD CONSTRAINT `buku_ibfk_1` FOREIGN KEY (`Kode_penerbit`) REFERENCES `penerbit` (`Kode_penerbit`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `buku_ibfk_1` FOREIGN KEY (`Kode_penerbit`) REFERENCES `penerbit` (`Kode_penerbit`);
 
 --
 -- Ketidakleluasaan untuk tabel `pinjam`
