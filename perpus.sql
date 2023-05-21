@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2023 at 09:29 AM
+-- Generation Time: May 21, 2023 at 08:05 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -40,8 +40,8 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`Kode_buku`, `Judul`, `Pengarang`, `Jml_buku`, `Kode_penerbit`) VALUES
-('BD01', 'dBase III plus', 'Epsi B', 5, '1'),
-('BD04', 'Clipper', 'Ahmad G', 4, '2'),
+('BD01', 'dBase III plus', 'Epsi B', 6, '1'),
+('BD04', 'Clipper', 'Ahmad G', 8, '2'),
 ('BD44', 'Kama Sutra', 'Adlof Hitler', 5, '3'),
 ('FI01', 'Fisika', 'Sutrisno', 10, '4'),
 ('S001', 'DOS', 'M.Urip', 10, '1');
@@ -69,7 +69,7 @@ INSERT INTO `mahasiswa` (`Nim`, `Nama`, `Alamat`, `Kota`, `TglLhr`, `Jenis_kel`)
 ('123010001', 'Ifan', 'Jl Babarsari', 'Yogya', '1980-07-27', 'L'),
 ('123010002', 'Adi', 'Jl Janti', 'Yogya', '1979-06-28', 'L'),
 ('123010003', 'Ayu', 'Jl Pemuda', 'Klaten', '1981-05-10', 'P'),
-('123010004', 'Yulia', 'Jl Veteran', 'Sleman', '1970-04-15', 'P');
+('123010004', 'Yulia', 'Jl Veteran', 'Sleman', '1970-04-14', 'P');
 
 -- --------------------------------------------------------
 
@@ -99,6 +99,7 @@ INSERT INTO `penerbit` (`Kode_penerbit`, `Nm_penerbit`) VALUES
 --
 
 CREATE TABLE `pinjam` (
+  `id` int(11) NOT NULL,
   `Tgl_pinjam` date NOT NULL,
   `Mhs_nim` varchar(9) DEFAULT NULL,
   `Buk_kode_buku` varchar(4) DEFAULT NULL,
@@ -110,13 +111,10 @@ CREATE TABLE `pinjam` (
 -- Dumping data for table `pinjam`
 --
 
-INSERT INTO `pinjam` (`Tgl_pinjam`, `Mhs_nim`, `Buk_kode_buku`, `Tgl_hrs_kembali`, `Tgl_kembali`) VALUES
-('2003-04-20', '123010001', 'S001', '2003-04-23', '2003-04-23'),
-('2003-04-20', '123010002', 'BD01', '2003-04-23', '2003-04-22'),
-('2003-04-20', '123010003', 'BD04', '2003-04-23', '2003-04-24'),
-('2003-04-21', '123010003', 'FI01', '2003-04-24', '2003-04-25'),
-('2003-04-21', '123010004', 'S001', '2003-04-24', '2003-04-25'),
-('2003-04-21', '123010001', 'BD01', '2003-04-24', '2003-04-24');
+INSERT INTO `pinjam` (`id`, `Tgl_pinjam`, `Mhs_nim`, `Buk_kode_buku`, `Tgl_hrs_kembali`, `Tgl_kembali`) VALUES
+(1, '2023-05-22', '123010002', 'BD01', '2023-05-24', NULL),
+(2, '2023-05-17', '123010004', 'BD04', '2023-05-17', '2023-05-24'),
+(3, '2023-05-22', '123010004', 'BD01', '2023-05-25', NULL);
 
 --
 -- Indexes for dumped tables
@@ -145,8 +143,19 @@ ALTER TABLE `penerbit`
 -- Indexes for table `pinjam`
 --
 ALTER TABLE `pinjam`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `Mhs_nim` (`Mhs_nim`),
   ADD KEY `Buk_kode_buku` (`Buk_kode_buku`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `pinjam`
+--
+ALTER TABLE `pinjam`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
