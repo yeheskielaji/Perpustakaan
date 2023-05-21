@@ -30,6 +30,7 @@ public class PinjamDAO implements PinjamImplement {
     final String cek = "SELECT COUNT(*) FROM pinjam WHERE Mhs_nim = ? AND Buk_kode_buku=?";
     final String cekBuku = "SELECT Jml_buku FROM buku WHERE Kode_buku = ?";
     final String cekNim = "SELECT * FROM pinjam WHERE Mhs_nim = ?";
+    final String cekdobel = "SELECT COUNT(*) FROM pinjam WHERE Mhs_nim=? AND Tgl_kembali IS NULL";
 
     public PinjamDAO() {
         koneksi = Connector.connection();

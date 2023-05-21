@@ -7,6 +7,7 @@ package view;
 import com.toedter.calendar.JDateChooser;
 import controller.PinjamController;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
@@ -191,7 +192,14 @@ public class PinjamBuku extends javax.swing.JFrame {
     private void cariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariActionPerformed
         // TODO add your handling code here:
         pc.carinim();
-        
+        if (nim.getText().equals("")||kode_buku.getText().equals("")||tgl_kembali.getDate()==null) {
+            JOptionPane.showMessageDialog(null, "Input blm lengkap", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            if (pc.cek()) {
+                    JOptionPane.showMessageDialog(null, "NIM Sudah Ada", "Error", JOptionPane.ERROR_MESSAGE);
+            } else  pc.insert();
+        }
+            pc.isitabel();    
     }//GEN-LAST:event_cariActionPerformed
 
     private void pinjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pinjamActionPerformed
