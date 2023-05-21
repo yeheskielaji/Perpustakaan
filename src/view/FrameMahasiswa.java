@@ -35,10 +35,10 @@ public class FrameMahasiswa extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelMahasiswa = new javax.swing.JTable();
         nim = new javax.swing.JTextField();
+        alamat = new javax.swing.JTextField();
         nama = new javax.swing.JTextField();
         kota = new javax.swing.JTextField();
         btnSimpan = new javax.swing.JButton();
@@ -47,7 +47,6 @@ public class FrameMahasiswa extends javax.swing.JFrame {
         TglLhr = new javax.swing.JFormattedTextField();
         perempuan = new javax.swing.JRadioButton();
         laki = new javax.swing.JRadioButton();
-<<<<<<< Updated upstream
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -57,16 +56,6 @@ public class FrameMahasiswa extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-=======
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        alamat = new javax.swing.JTextArea();
-        jLabel5 = new javax.swing.JLabel();
-
-        jLabel1.setText("jLabel1");
->>>>>>> Stashed changes
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -139,7 +128,6 @@ public class FrameMahasiswa extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< Updated upstream
         jLabel1.setText("NIM");
 
         jLabel2.setText("NAMA");
@@ -179,19 +167,6 @@ public class FrameMahasiswa extends javax.swing.JFrame {
         );
 
         jLabel8.setText("DATA MAHASISWA");
-=======
-        jLabel2.setText("NIM");
-
-        jLabel3.setText("NAMA");
-
-        jLabel4.setText("ALAMAT");
-
-        alamat.setColumns(20);
-        alamat.setRows(5);
-        jScrollPane2.setViewportView(alamat);
-
-        jLabel5.setText("KOTA");
->>>>>>> Stashed changes
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -202,7 +177,6 @@ public class FrameMahasiswa extends javax.swing.JFrame {
                 .addComponent(jLabel8)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-<<<<<<< Updated upstream
                 .addContainerGap(31, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -212,19 +186,12 @@ public class FrameMahasiswa extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-=======
-                .addContainerGap(30, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
->>>>>>> Stashed changes
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(nim)
                         .addComponent(nama)
+                        .addComponent(alamat)
                         .addComponent(kota)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(btnSimpan)
@@ -235,18 +202,10 @@ public class FrameMahasiswa extends javax.swing.JFrame {
                             .addComponent(btnDelete))
                         .addComponent(TglLhr, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(laki)
-<<<<<<< Updated upstream
                     .addComponent(perempuan))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
-=======
-                    .addComponent(perempuan)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
->>>>>>> Stashed changes
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,7 +215,6 @@ public class FrameMahasiswa extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-<<<<<<< Updated upstream
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(nim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1))
@@ -276,29 +234,6 @@ public class FrameMahasiswa extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(TglLhr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))
-=======
-                        .addGap(93, 93, 93)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(nim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(31, 31, 31)
-                                .addComponent(jLabel4)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(nama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(kota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))
-                        .addGap(12, 12, 12)
-                        .addComponent(TglLhr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
->>>>>>> Stashed changes
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
@@ -310,22 +245,14 @@ public class FrameMahasiswa extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnSimpan)
                             .addComponent(btnUpdate)))
-<<<<<<< Updated upstream
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnDelete)
                 .addContainerGap(19, Short.MAX_VALUE))
-=======
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(98, 98, 98)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(336, 336, 336)
-                .addComponent(btnDelete)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
->>>>>>> Stashed changes
         );
 
         nim.setDocument(new JTextFieldLimit(9));
+        alamat.setDocument(new JTextFieldLimit(40));
         nama.setDocument(new JTextFieldLimit(40));
         kota.setDocument(new JTextFieldLimit(20));
 
@@ -431,7 +358,7 @@ public class FrameMahasiswa extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFormattedTextField TglLhr;
-    private javax.swing.JTextArea alamat;
+    private javax.swing.JTextField alamat;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSimpan;
     private javax.swing.JButton btnUpdate;
@@ -441,15 +368,11 @@ public class FrameMahasiswa extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-<<<<<<< Updated upstream
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-=======
->>>>>>> Stashed changes
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField kota;
     private javax.swing.JRadioButton laki;
     private javax.swing.JTextField nama;
@@ -474,11 +397,11 @@ public class FrameMahasiswa extends javax.swing.JFrame {
         this.TglLhr = TglLhr;
     }
 
-    public JTextArea getAlamat() {
+    public JTextField getAlamat() {
         return alamat;
     }
 
-    public void setAlamat(JTextArea alamat) {
+    public void setAlamat(JTextField alamat) {
         this.alamat = alamat;
     }
 

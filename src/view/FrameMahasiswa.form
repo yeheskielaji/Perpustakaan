@@ -4,11 +4,6 @@
   <NonVisualComponents>
     <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
-      </Properties>
-    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -39,7 +34,6 @@
               <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-<<<<<<< Updated upstream
               <EmptySpace pref="31" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
@@ -50,20 +44,13 @@
                   </Group>
                   <Component id="jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="jPanel1" alignment="1" min="-2" max="-2" attributes="0"/>
-=======
-              <EmptySpace pref="30" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
->>>>>>> Stashed changes
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                       <Component id="nim" alignment="0" max="32767" attributes="0"/>
                       <Component id="nama" alignment="0" max="32767" attributes="0"/>
+                      <Component id="alamat" alignment="0" max="32767" attributes="0"/>
                       <Component id="kota" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="btnSimpan" min="-2" max="-2" attributes="0"/>
@@ -78,17 +65,10 @@
                   </Group>
                   <Component id="laki" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="perempuan" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" min="-2" pref="164" max="-2" attributes="0"/>
               </Group>
-<<<<<<< Updated upstream
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="461" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-=======
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="461" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
->>>>>>> Stashed changes
           </Group>
       </Group>
     </DimensionLayout>
@@ -99,7 +79,6 @@
               <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< Updated upstream
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="nim" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -125,35 +104,6 @@
                           <Component id="TglLhr" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-=======
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="nim" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="nama" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jScrollPane2" min="-2" pref="54" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="kota" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Component id="TglLhr" min="-2" max="-2" attributes="0"/>
->>>>>>> Stashed changes
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
@@ -169,22 +119,11 @@
                           <Component id="btnUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-<<<<<<< Updated upstream
                   <Component id="jScrollPane1" min="-2" pref="275" max="-2" attributes="0"/>
-=======
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="275" max="-2" attributes="0"/>
-                  </Group>
->>>>>>> Stashed changes
               </Group>
-              <EmptySpace min="-2" pref="336" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
-<<<<<<< Updated upstream
               <EmptySpace pref="19" max="32767" attributes="0"/>
-=======
-              <EmptySpace max="32767" attributes="0"/>
->>>>>>> Stashed changes
           </Group>
       </Group>
     </DimensionLayout>
@@ -267,6 +206,11 @@
         <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="nim.setDocument(new JTextFieldLimit(9));"/>
       </AuxValues>
     </Component>
+    <Component class="javax.swing.JTextField" name="alamat">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="alamat.setDocument(new JTextFieldLimit(40));"/>
+      </AuxValues>
+    </Component>
     <Component class="javax.swing.JTextField" name="nama">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="nama.setDocument(new JTextFieldLimit(40));"/>
@@ -333,34 +277,21 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lakiActionPerformed"/>
       </Events>
     </Component>
-<<<<<<< Updated upstream
     <Component class="javax.swing.JLabel" name="jLabel1">
-=======
-    <Component class="javax.swing.JLabel" name="jLabel2">
->>>>>>> Stashed changes
       <Properties>
         <Property name="text" type="java.lang.String" value="NIM"/>
       </Properties>
     </Component>
-<<<<<<< Updated upstream
     <Component class="javax.swing.JLabel" name="jLabel2">
-=======
-    <Component class="javax.swing.JLabel" name="jLabel3">
->>>>>>> Stashed changes
       <Properties>
         <Property name="text" type="java.lang.String" value="NAMA"/>
       </Properties>
     </Component>
-<<<<<<< Updated upstream
     <Component class="javax.swing.JLabel" name="jLabel3">
-=======
-    <Component class="javax.swing.JLabel" name="jLabel4">
->>>>>>> Stashed changes
       <Properties>
         <Property name="text" type="java.lang.String" value="ALAMAT"/>
       </Properties>
     </Component>
-<<<<<<< Updated upstream
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
         <Property name="text" type="java.lang.String" value="KOTA"/>
@@ -412,32 +343,13 @@
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
             <Property name="text" type="java.lang.String" value="KELAMIN"/>
-=======
-    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
-      <AuxValues>
-        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-      </AuxValues>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-      <SubComponents>
-        <Component class="javax.swing.JTextArea" name="alamat">
-          <Properties>
-            <Property name="columns" type="int" value="20"/>
-            <Property name="rows" type="int" value="5"/>
->>>>>>> Stashed changes
           </Properties>
         </Component>
       </SubComponents>
     </Container>
-<<<<<<< Updated upstream
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
         <Property name="text" type="java.lang.String" value="DATA MAHASISWA"/>
-=======
-    <Component class="javax.swing.JLabel" name="jLabel5">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="KOTA"/>
->>>>>>> Stashed changes
       </Properties>
     </Component>
   </SubComponents>
