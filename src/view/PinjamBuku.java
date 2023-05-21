@@ -4,6 +4,12 @@
  */
 package view;
 
+import com.toedter.calendar.JDateChooser;
+import controller.PinjamController;
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author LENOVO
@@ -13,8 +19,12 @@ public class PinjamBuku extends javax.swing.JFrame {
     /**
      * Creates new form PinjamBuku
      */
+        PinjamController pc;
+
     public PinjamBuku() {
         initComponents();
+        pc = new PinjamController(this);
+        pc.isitabel();
     }
 
     /**
@@ -38,6 +48,7 @@ public class PinjamBuku extends javax.swing.JFrame {
         tgl_kembali = new com.toedter.calendar.JDateChooser();
         pinjam = new javax.swing.JButton();
         kembali = new javax.swing.JButton();
+        reset = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,6 +100,13 @@ public class PinjamBuku extends javax.swing.JFrame {
             }
         });
 
+        reset.setText("Reset");
+        reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resetActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -106,9 +124,11 @@ public class PinjamBuku extends javax.swing.JFrame {
                                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(nim, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(41, 41, 41)
-                                        .addComponent(cari)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                                        .addGap(24, 24, 24)
+                                        .addComponent(cari)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(reset)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(16, 16, 16)
@@ -140,8 +160,10 @@ public class PinjamBuku extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(nim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cari)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cari)
+                            .addComponent(reset))))
                 .addGap(1, 1, 1)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
@@ -168,15 +190,25 @@ public class PinjamBuku extends javax.swing.JFrame {
 
     private void cariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariActionPerformed
         // TODO add your handling code here:
+        pc.carinim();
+        
     }//GEN-LAST:event_cariActionPerformed
 
     private void pinjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pinjamActionPerformed
         // TODO add your handling code here:
+        pc.insert();
+        pc.update();
+        pc.isitabel();
     }//GEN-LAST:event_pinjamActionPerformed
 
     private void kembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_kembaliActionPerformed
+
+    private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
+        // TODO add your handling code here:
+        pc.isitabel();
+    }//GEN-LAST:event_resetActionPerformed
 
     /**
      * @param args the command line arguments
@@ -225,6 +257,49 @@ public class PinjamBuku extends javax.swing.JFrame {
     private javax.swing.JTextField kode_buku;
     private javax.swing.JTextField nim;
     private javax.swing.JButton pinjam;
+    private javax.swing.JButton reset;
     private com.toedter.calendar.JDateChooser tgl_kembali;
     // End of variables declaration//GEN-END:variables
+
+    public JTextField getKode_buku() {
+        return kode_buku;
+    }
+
+    public void setKode_buku(JTextField kode_buku) {
+        this.kode_buku = kode_buku;
+    }
+
+    public JTextField getNim() {
+        return nim;
+    }
+
+    public void setNim(JTextField nim) {
+        this.nim = nim;
+    }
+
+    public JButton getPinjam() {
+        return pinjam;
+    }
+
+    public void setPinjam(JButton pinjam) {
+        this.pinjam = pinjam;
+    }
+
+    public JDateChooser getTgl_kembali() {
+        return tgl_kembali;
+    }
+
+    public void setTgl_kembali(JDateChooser tgl_kembali) {
+        this.tgl_kembali = tgl_kembali;
+    }
+
+    public JTable getjTable1() {
+        return jTable1;
+    }
+
+    public void setjTable1(JTable jTable1) {
+        this.jTable1 = jTable1;
+    }
+
+
 }
