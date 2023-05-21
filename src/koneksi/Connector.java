@@ -26,6 +26,7 @@ public class Connector {
             }catch(SQLException eksepsi) {
                 eksepsi.printStackTrace();
                 System.out.println("Koneksi Gagal");
+                System.exit(0);
             }
             
         }
