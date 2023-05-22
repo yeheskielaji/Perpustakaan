@@ -18,13 +18,13 @@ import daoimplement.PinjamImplement;
  *
  * @author andra
  */
-public class PinjamDAO implements PinjamImplement {
+public class KembaliDAO implements PinjamImplement {
 
     Connection koneksi;
 
-    final String read = "SELECT * FROM pinjam where Tgl_kembali IS NULL";
+    final String read = "SELECT * FROM pinjam where Tgl_kembali IS NOT NULL";
     final String insert = "INSERT INTO pinjam(Tgl_pinjam, Mhs_nim, Buk_kode_buku, Tgl_hrs_kembali) VALUES (?,?,?,?);";
-    final String update = "UPDATE buku SET Jml_buku=Jml_buku-1 WHERE Kode_buku=?;";
+    final String update = "UPDATE buku SET Jml_buku=Jml_buku+1 WHERE Kode_buku=?;";
 //    final String update = "UPDATE pinjam SET Tgl_pinjam=?,Mhs_nim=?,Buk_kode_buku=?,Tgl_hrs_kembali=?,Tgl_kembali=? WHERE Nim=?";
 //    final String delete = "DELETE FROM mahasiswa WHERE Nim=?";
     final String cariNim = "SELECT * FROM pinjam WHERE Mhs_nim = ? AND Tgl_kembali IS NULL";
@@ -32,7 +32,7 @@ public class PinjamDAO implements PinjamImplement {
     final String cekNim = "SELECT COUNT(*) FROM pinjam WHERE Mhs_nim = ? AND Tgl_kembali IS NULL";
     final String cekdobel = "SELECT COUNT(*) FROM pinjam WHERE Mhs_nim=? AND Tgl_kembali IS NULL";
 
-    public PinjamDAO() {
+    public KembaliDAO() {
         koneksi = Connector.connection();
     }
 
@@ -40,7 +40,7 @@ public class PinjamDAO implements PinjamImplement {
     public void insert(Pinjam p) {
         PreparedStatement statement = null;
         try {
-            statement = koneksi.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
+            statement = koneksi.prepareStatement(insert);
             statement.setDate(1, p.getTgl_pinjam());
             statement.setString(2, p.getMhs_nim());
             statement.setString(3, p.getBuk_kode_buku());
@@ -76,27 +76,6 @@ public class PinjamDAO implements PinjamImplement {
             }
         }
     }
-//
-//    @Override
-//    public void delete(String nim) {
-//        PreparedStatement statement = null;
-//
-//        try {
-//            statement = koneksi.prepareStatement(delete);
-//
-//            statement.setString(1, nim);
-//            statement.executeUpdate();
-//
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        } finally {
-//            try {
-//                statement.close();
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
 
     @Override
     public boolean ceknim(Pinjam p) {
@@ -161,7 +140,7 @@ public class PinjamDAO implements PinjamImplement {
             resultSet.close();
             statement.close();
         } catch (SQLException e) {
-            Logger.getLogger(PinjamDAO.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(KembaliDAO.class.getName()).log(Level.SEVERE, null, e);
         }
         return p;
     }
@@ -184,7 +163,7 @@ public class PinjamDAO implements PinjamImplement {
             }
 
         } catch (SQLException e) {
-            Logger.getLogger(PinjamDAO.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(KembaliDAO.class.getName()).log(Level.SEVERE, null, e);
         }
         return p;
     }
