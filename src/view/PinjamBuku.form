@@ -220,6 +220,10 @@
           </Properties>
         </Component>
         <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTabbedPane1MouseClicked"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTabbedPane1KeyPressed"/>
+          </Events>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
           <SubComponents>
@@ -254,8 +258,6 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                                           <Component id="pinjam" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="kembali" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -284,10 +286,7 @@
                               <Component id="tgl_kembali" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="pinjam" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="kembali" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="pinjam" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -310,14 +309,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="kode_buku">
-                </Component>
-                <Component class="javax.swing.JButton" name="kembali">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="KEMBALI"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kembaliActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel3">
                   <Properties>
@@ -348,10 +339,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="nimkembali" min="-2" pref="160" max="-2" attributes="0"/>
-                              <Component id="kode_bukukembali" min="-2" pref="160" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="kode_bukukembali" min="-2" pref="160" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -364,9 +352,7 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                          <Component id="nimkembali" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                           <Component id="kode_bukukembali" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="kembalikan" min="-2" max="-2" attributes="0"/>
@@ -382,11 +368,6 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kembalikanActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JTextField" name="nimkembali">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nimkembaliActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="kode_bukukembali">

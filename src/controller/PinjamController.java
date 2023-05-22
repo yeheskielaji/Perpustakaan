@@ -89,7 +89,7 @@ public class PinjamController {
         
         Pinjam pi = new Pinjam();
         pi.setTgl_kembali(date);
-        pi.setMhs_nim(frame4.getNimkembali().getText());
+        pi.setMhs_nim(frame4.getNim().getText());
         pi.setBuk_kode_buku(frame4.getKode_bukukembali().getText()); 
         
         implementPinjam.insertkembali(pi);

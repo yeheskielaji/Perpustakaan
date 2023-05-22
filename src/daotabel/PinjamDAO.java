@@ -22,7 +22,7 @@ public class PinjamDAO implements PinjamImplement {
 
     Connection koneksi;
 
-    final String read = "SELECT * FROM pinjam where Tgl_kembali IS NOT NULL";
+    final String read = "SELECT * FROM pinjam";
     final String insert = "INSERT INTO pinjam(Tgl_pinjam, Mhs_nim, Buk_kode_buku, Tgl_hrs_kembali) VALUES (?,?,?,?);";
     final String update = "UPDATE buku SET Jml_buku=Jml_buku-1 WHERE Kode_buku=?;";
     final String cariNim = "SELECT * FROM pinjam WHERE Mhs_nim = ?";
