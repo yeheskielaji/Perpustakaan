@@ -14,8 +14,8 @@ public interface PinjamImplement {
     public void insert(Pinjam p);
     public void update(Pinjam p);
 //    public void delete(String nim);
-    public boolean cek(String nim, String kode);
-    public boolean cekbuku(String kode);
+    public boolean ceknim(Pinjam p);
+    public boolean cekbuku(Pinjam p);
     public List<Pinjam> carinim(Pinjam pp);
     public List<Pinjam> getData();
 }

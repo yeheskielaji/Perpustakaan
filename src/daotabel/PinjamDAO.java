@@ -24,12 +24,12 @@ public class PinjamDAO implements PinjamImplement {
 
     final String read = "SELECT * FROM pinjam";
     final String insert = "INSERT INTO pinjam(Tgl_pinjam, Mhs_nim, Buk_kode_buku, Tgl_hrs_kembali) VALUES (?,?,?,?);";
-    final String update = "UPDATE buku SET Jml_buku=Jml_buku+1 WHERE Kode_buku=?;";
+    final String update = "UPDATE buku SET Jml_buku=Jml_buku-1 WHERE Kode_buku=?;";
 //    final String update = "UPDATE pinjam SET Tgl_pinjam=?,Mhs_nim=?,Buk_kode_buku=?,Tgl_hrs_kembali=?,Tgl_kembali=? WHERE Nim=?";
 //    final String delete = "DELETE FROM mahasiswa WHERE Nim=?";
-    final String cek = "SELECT COUNT(*) FROM pinjam WHERE Mhs_nim = ? AND Buk_kode_buku=?";
+    final String cariNim = "SELECT * FROM pinjam WHERE Mhs_nim = ? AND Tgl_kembali IS NULL";
     final String cekBuku = "SELECT Jml_buku FROM buku WHERE Kode_buku = ?";
-    final String cekNim = "SELECT * FROM pinjam WHERE Mhs_nim = ?";
+    final String cekNim = "SELECT COUNT(*) FROM pinjam WHERE Mhs_nim = ? AND Tgl_kembali IS NULL";
     final String cekdobel = "SELECT COUNT(*) FROM pinjam WHERE Mhs_nim=? AND Tgl_kembali IS NULL";
 
     public PinjamDAO() {
@@ -106,45 +106,45 @@ public class PinjamDAO implements PinjamImplement {
 //    }
 
     @Override
-    public boolean cek(String nim, String kode) {
+    public boolean ceknim(Pinjam p) {
         try {
-            PreparedStatement statement = koneksi.prepareStatement(cek);
-            statement.setString(1, nim);
+            PreparedStatement statement = koneksi.prepareStatement(cekNim);
+            statement.setString(1, p.getMhs_nim());
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
                 int count = resultSet.getInt(1);
-                if (count != 0) {
+                if (count >= 2) {
                     return true;
                 }
-//                return count > 0;
+                System.out.println(count);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-//        System.out.println("aa");
         return false;
 
     }
 
     @Override
-    public boolean cekbuku(String kode) {
+    public boolean cekbuku(Pinjam p) {
+        int count = 0;
         try {
-            PreparedStatement statement = koneksi.prepareStatement(cek);
-            statement.setString(1, kode);
-            ResultSet resultSet = statement.executeQuery();
 
+            PreparedStatement statement = koneksi.prepareStatement(cekBuku);
+            statement.setString(1, p.getBuk_kode_buku());
+            ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                int count = resultSet.getInt(1);
-                if (count != 0) {
-                    return true;
-                }
-//                return count > 0;
+                count = resultSet.getInt("Jml_buku");
+            }
+//            System.out.println(count);
+
+            if (count == 0) {
+                return true;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-//        System.out.println("aa");
         return false;
     }
 
@@ -153,7 +153,7 @@ public class PinjamDAO implements PinjamImplement {
         List<Pinjam> p = null;
         try {
             p = new ArrayList<Pinjam>();
-            PreparedStatement statement = koneksi.prepareStatement(cekNim);
+            PreparedStatement statement = koneksi.prepareStatement(cariNim);
             statement.setString(1, pp.getMhs_nim());
             ResultSet resultSet = statement.executeQuery();
 
@@ -171,38 +171,8 @@ public class PinjamDAO implements PinjamImplement {
         } catch (SQLException e) {
             Logger.getLogger(PinjamDAO.class.getName()).log(Level.SEVERE, null, e);
         }
-//        System.out.println("aa");
         return p;
     }
-
-//    private List getTopics(Connection conn, String searchCriteria)
-//            throws SQLException {
-//        List blogs = new LinkedList();
-//        String query = "SELECT id, text FROM blogs WHERE UPPER(text) LIKE ?";
-//        try {
-//            // going to do a search using "upper"
-//            searchCriteria = searchCriteria.toUpperCase();
-//
-//            // create the preparedstatement and add the criteria
-//            PreparedStatement ps = conn.prepareStatement(query);
-//            ps.setString(1, "%" + searchCriteria + "%");
-//
-//            // process the results
-//            ResultSet rs = ps.executeQuery();
-//            while (rs.next()) {
-//                Blog blog = new Blog();
-//                blog.setID(rs.getInt("id"));
-//                blog.setText(rs.getString("text"));
-//                blogs.add(blog);
-//            }
-//            rs.close();
-//            ps.close();
-//        } catch (SQLException se) {
-//            // log exception;
-//            throw se;
-//        }
-//        return blogs;
-//    }
 
     @Override
     public List<Pinjam> getData() {

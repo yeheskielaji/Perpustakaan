@@ -20,7 +20,7 @@ public class PinjamBuku extends javax.swing.JFrame {
     /**
      * Creates new form PinjamBuku
      */
-        PinjamController pc;
+    PinjamController pc;
 
     public PinjamBuku() {
         initComponents();
@@ -192,20 +192,21 @@ public class PinjamBuku extends javax.swing.JFrame {
     private void cariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariActionPerformed
         // TODO add your handling code here:
         pc.carinim();
-        if (nim.getText().equals("")||kode_buku.getText().equals("")||tgl_kembali.getDate()==null) {
-            JOptionPane.showMessageDialog(null, "Input blm lengkap", "Error", JOptionPane.ERROR_MESSAGE);
-        } else {
-            if (pc.cek()) {
-                    JOptionPane.showMessageDialog(null, "NIM Sudah Ada", "Error", JOptionPane.ERROR_MESSAGE);
-            } else  pc.insert();
-        }
-            pc.isitabel();    
     }//GEN-LAST:event_cariActionPerformed
 
     private void pinjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pinjamActionPerformed
         // TODO add your handling code here:
-        pc.insert();
-        pc.update();
+        if (nim.getText().equals("") || kode_buku.getText().equals("") || tgl_kembali.getDate() == null) {
+            JOptionPane.showMessageDialog(null, "Input blm lengkap", "Error", JOptionPane.ERROR_MESSAGE);
+        } else if (pc.ceknim()) {
+            JOptionPane.showMessageDialog(null, "NIM Sudah pinjam 2 buku", "Error", JOptionPane.ERROR_MESSAGE);
+        } else if (pc.cekbuku()) {
+            JOptionPane.showMessageDialog(null, "Semua buku ini sudah dipinjam", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            pc.insert();
+            pc.update();
+        }
+
         pc.isitabel();
     }//GEN-LAST:event_pinjamActionPerformed
 
@@ -308,6 +309,5 @@ public class PinjamBuku extends javax.swing.JFrame {
     public void setjTable1(JTable jTable1) {
         this.jTable1 = jTable1;
     }
-
 
 }

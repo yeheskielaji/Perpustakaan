@@ -58,15 +58,16 @@ public class PinjamController {
 //        implementPinjam.delete(nim);
 //    }
     
-    public boolean cek() {
-        String nim = frame4.getNim().getText();
-        String kode = frame4.getKode_buku().getText();
-        return implementPinjam.cek(nim, kode);
+    public boolean ceknim() {
+        Pinjam pi = new Pinjam();
+        pi.setMhs_nim(frame4.getNim().getText());        
+        return implementPinjam.ceknim(pi);
     }
     
     public boolean cekbuku() {
-        String kode = frame4.getKode_buku().getText();
-        return implementPinjam.cekbuku(kode);
+        Pinjam pi = new Pinjam();
+        pi.setBuk_kode_buku(frame4.getKode_buku().getText()); 
+        return implementPinjam.cekbuku(pi);
     }
     
     public void carinim() {
