@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2023 at 08:05 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Waktu pembuatan: 22 Bulan Mei 2023 pada 16.02
+-- Versi server: 10.4.28-MariaDB
+-- Versi PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,18 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `buku`
+-- Struktur dari tabel `admin`
+--
+
+CREATE TABLE `admin` (
+  `user` int(11) NOT NULL,
+  `password` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `buku`
 --
 
 CREATE TABLE `buku` (
@@ -36,12 +47,12 @@ CREATE TABLE `buku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `buku`
+-- Dumping data untuk tabel `buku`
 --
 
 INSERT INTO `buku` (`Kode_buku`, `Judul`, `Pengarang`, `Jml_buku`, `Kode_penerbit`) VALUES
-('BD01', 'dBase III plus', 'Epsi B', 6, '1'),
-('BD04', 'Clipper', 'Ahmad G', 8, '2'),
+('BD01', 'dBase III plus', 'Epsi B', 5, '1'),
+('BD04', 'Clipper', 'Ahmad G', 4, '2'),
 ('BD44', 'Kama Sutra', 'Adlof Hitler', 5, '3'),
 ('FI01', 'Fisika', 'Sutrisno', 10, '4'),
 ('S001', 'DOS', 'M.Urip', 10, '1');
@@ -49,7 +60,7 @@ INSERT INTO `buku` (`Kode_buku`, `Judul`, `Pengarang`, `Jml_buku`, `Kode_penerbi
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mahasiswa`
+-- Struktur dari tabel `mahasiswa`
 --
 
 CREATE TABLE `mahasiswa` (
@@ -62,19 +73,19 @@ CREATE TABLE `mahasiswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `mahasiswa`
+-- Dumping data untuk tabel `mahasiswa`
 --
 
 INSERT INTO `mahasiswa` (`Nim`, `Nama`, `Alamat`, `Kota`, `TglLhr`, `Jenis_kel`) VALUES
 ('123010001', 'Ifan', 'Jl Babarsari', 'Yogya', '1980-07-27', 'L'),
 ('123010002', 'Adi', 'Jl Janti', 'Yogya', '1979-06-28', 'L'),
 ('123010003', 'Ayu', 'Jl Pemuda', 'Klaten', '1981-05-10', 'P'),
-('123010004', 'Yulia', 'Jl Veteran', 'Sleman', '1970-04-14', 'P');
+('123010004', 'Yulia', 'Jl Veteran', 'Sleman', '1970-04-15', 'P');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penerbit`
+-- Struktur dari tabel `penerbit`
 --
 
 CREATE TABLE `penerbit` (
@@ -83,7 +94,7 @@ CREATE TABLE `penerbit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `penerbit`
+-- Dumping data untuk tabel `penerbit`
 --
 
 INSERT INTO `penerbit` (`Kode_penerbit`, `Nm_penerbit`) VALUES
@@ -95,11 +106,10 @@ INSERT INTO `penerbit` (`Kode_penerbit`, `Nm_penerbit`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pinjam`
+-- Struktur dari tabel `pinjam`
 --
 
 CREATE TABLE `pinjam` (
-  `id` int(11) NOT NULL,
   `Tgl_pinjam` date NOT NULL,
   `Mhs_nim` varchar(9) DEFAULT NULL,
   `Buk_kode_buku` varchar(4) DEFAULT NULL,
@@ -108,67 +118,65 @@ CREATE TABLE `pinjam` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `pinjam`
+-- Dumping data untuk tabel `pinjam`
 --
 
-INSERT INTO `pinjam` (`id`, `Tgl_pinjam`, `Mhs_nim`, `Buk_kode_buku`, `Tgl_hrs_kembali`, `Tgl_kembali`) VALUES
-(1, '2023-05-22', '123010002', 'BD01', '2023-05-24', NULL),
-(2, '2023-05-17', '123010004', 'BD04', '2023-05-17', '2023-05-24'),
-(3, '2023-05-22', '123010004', 'BD01', '2023-05-25', NULL);
+INSERT INTO `pinjam` (`Tgl_pinjam`, `Mhs_nim`, `Buk_kode_buku`, `Tgl_hrs_kembali`, `Tgl_kembali`) VALUES
+('2003-04-20', '123010001', 'S001', '2003-04-23', '2003-04-23'),
+('2003-04-20', '123010002', 'BD01', '2003-04-23', '2003-04-22'),
+('2003-04-20', '123010003', 'BD04', '2003-04-23', '2003-04-24'),
+('2003-04-21', '123010003', 'FI01', '2003-04-24', '2003-04-25'),
+('2003-04-21', '123010004', 'S001', '2003-04-24', '2003-04-25'),
+('2003-04-21', '123010001', 'BD01', '2003-04-24', '2003-04-24');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `buku`
+-- Indeks untuk tabel `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`user`);
+
+--
+-- Indeks untuk tabel `buku`
 --
 ALTER TABLE `buku`
   ADD PRIMARY KEY (`Kode_buku`),
   ADD KEY `Kode_penerbit` (`Kode_penerbit`);
 
 --
--- Indexes for table `mahasiswa`
+-- Indeks untuk tabel `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`Nim`);
 
 --
--- Indexes for table `penerbit`
+-- Indeks untuk tabel `penerbit`
 --
 ALTER TABLE `penerbit`
   ADD PRIMARY KEY (`Kode_penerbit`);
 
 --
--- Indexes for table `pinjam`
+-- Indeks untuk tabel `pinjam`
 --
 ALTER TABLE `pinjam`
-  ADD PRIMARY KEY (`id`),
   ADD KEY `Mhs_nim` (`Mhs_nim`),
   ADD KEY `Buk_kode_buku` (`Buk_kode_buku`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- AUTO_INCREMENT for table `pinjam`
---
-ALTER TABLE `pinjam`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `buku`
+-- Ketidakleluasaan untuk tabel `buku`
 --
 ALTER TABLE `buku`
   ADD CONSTRAINT `buku_ibfk_1` FOREIGN KEY (`Kode_penerbit`) REFERENCES `penerbit` (`Kode_penerbit`);
 
 --
--- Constraints for table `pinjam`
+-- Ketidakleluasaan untuk tabel `pinjam`
 --
 ALTER TABLE `pinjam`
   ADD CONSTRAINT `pinjam_ibfk_1` FOREIGN KEY (`Mhs_nim`) REFERENCES `mahasiswa` (`Nim`),
