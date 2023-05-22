@@ -13,7 +13,7 @@ import models.*;
 public interface PenerbitImplement {
     public void insert(Penerbit p);
     public void update(Penerbit p);
-    public void delete(String id);
-    public boolean cek(String id);
+    public void delete(Penerbit p);
+    public boolean cek(Penerbit p);
     public List<Penerbit> getData();
 }

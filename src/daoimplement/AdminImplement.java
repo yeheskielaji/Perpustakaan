@@ -10,12 +10,10 @@ import models.*;
  *
  * @author andra
  */
-public interface KembaliImplement {
-    public void insert(Pinjam p);
-    public void update(Pinjam p);
-//    public void delete(String nim);
-    public boolean ceknim(Pinjam p);
-    public boolean cekbuku(Pinjam p);
-    public List<Pinjam> carinim(Pinjam pp);
-    public List<Pinjam> getData();
+public interface AdminImplement {
+    public void insert(Admin a);
+    public void update(Admin a);
+    public void delete(Admin a);
+    public boolean cek(Admin a);
+    public List<Admin> getData();
 }

@@ -50,12 +50,14 @@ public class PenerbitController {
     }
     
     public void delete() {
-        String kode = frame3.getKodepenerbit().getText();
-        implementPenerbit.delete(kode);
+        Penerbit pp = new Penerbit();
+        pp.setKode_penerbit(frame3.getKodepenerbit().getText());
+        implementPenerbit.delete(pp);
     }
     
     public boolean cek() {
-        String kode = frame3.getKodepenerbit().getText();
-        return implementPenerbit.cek(kode);
+        Penerbit pp = new Penerbit();
+        pp.setKode_penerbit(frame3.getKodepenerbit().getText());
+        return implementPenerbit.cek(pp);
     }
 }

@@ -13,7 +13,7 @@ import models.*;
 public interface MahasiswaImplement {
     public void insert(Mahasiswa m);
     public void update(Mahasiswa m);
-    public void delete(String nim);
-    public boolean cek(String nim);
+    public void delete(Mahasiswa m);
+    public boolean cek(Mahasiswa m);
     public List<Mahasiswa> getData();
 }

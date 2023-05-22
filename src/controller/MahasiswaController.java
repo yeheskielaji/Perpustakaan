@@ -63,12 +63,14 @@ public class MahasiswaController {
     }
 
     public void delete() {
-        String nim = frame2.getNim().getText();
-        implementMahasiswa.delete(nim);
+        Mahasiswa mm = new Mahasiswa();
+        mm.setNim(frame2.getNim().getText());
+        implementMahasiswa.delete(mm);
     }
 
     public boolean cek() {
-        String nim = frame2.getNim().getText();
-        return implementMahasiswa.cek(nim);
+        Mahasiswa mm = new Mahasiswa();
+        mm.setNim(frame2.getNim().getText());
+        return implementMahasiswa.cek(mm);
     }
 }

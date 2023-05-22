@@ -81,13 +81,13 @@ public class MahasiswaDAO implements MahasiswaImplement {
     }
 
     @Override
-    public void delete(String nim) {
+    public void delete(Mahasiswa m) {
         PreparedStatement statement = null;
 
         try {
             statement = koneksi.prepareStatement(delete);
 
-            statement.setString(1, nim);
+            statement.setString(1, m.getNim());
             statement.executeUpdate();
 
         } catch (SQLException e) {
@@ -102,10 +102,10 @@ public class MahasiswaDAO implements MahasiswaImplement {
     }
 
     @Override
-    public boolean cek(String nim) {
+    public boolean cek(Mahasiswa m) {
         try{
             PreparedStatement statement = koneksi.prepareStatement(cek);
-            statement.setString(1, nim);
+            statement.setString(1, m.getNim());
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {

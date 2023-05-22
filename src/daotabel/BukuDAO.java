@@ -88,13 +88,13 @@ public class BukuDAO implements BukuImplement {
     }
 
     @Override
-    public void delete(String kode) {
+    public void delete(Buku b) {
         PreparedStatement statement = null;
         
         try {
             statement = koneksi.prepareStatement(delete);
             
-            statement.setString(1,kode);
+            statement.setString(1,b.getKode_buku());
             statement.executeUpdate();
             
             
@@ -111,10 +111,10 @@ public class BukuDAO implements BukuImplement {
     }
     
     @Override
-    public boolean cek(String kode) {
+    public boolean cek(Buku b) {
         try{
             PreparedStatement statement = koneksi.prepareStatement(cek);
-            statement.setString(1, kode);
+            statement.setString(1, b.getKode_buku());
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {

@@ -25,8 +25,6 @@ public class KembaliDAO implements PinjamImplement {
     final String read = "SELECT * FROM pinjam where Tgl_kembali IS NOT NULL";
     final String insert = "UPDATE pinjam SET Tgl_kembali=? WHERE Mhs_nim=? AND Buk_kode_buku = ? AND Tgl_kembali IS NULL";
     final String update = "UPDATE buku SET Jml_buku=Jml_buku+1 WHERE Kode_buku=?;";
-//    final String update = "UPDATE pinjam SET Tgl_pinjam=?,Mhs_nim=?,Buk_kode_buku=?,Tgl_hrs_kembali=?,Tgl_kembali=? WHERE Nim=?";
-//    final String delete = "DELETE FROM mahasiswa WHERE Nim=?";
     final String cariNim = "SELECT * FROM pinjam WHERE Mhs_nim = ? AND Tgl_kembali IS NULL";
     public KembaliDAO() {
         koneksi = Connector.connection();

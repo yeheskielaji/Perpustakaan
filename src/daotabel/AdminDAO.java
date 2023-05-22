@@ -10,33 +10,33 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import koneksi.Connector;
 import models.*;
-import daoimplement.PenerbitImplement;
+import daoimplement.AdminImplement;
 
 /**
  *
  * @author andra
  */
-public class PenerbitDAO implements PenerbitImplement {
+public class AdminDAO implements AdminImplement {
 
     Connection koneksi;
 
-    final String read = "SELECT * FROM penerbit";
-    final String insert = "INSERT INTO penerbit(Kode_penerbit, Nm_penerbit) VALUES (?,?)";
-    final String update = "UPDATE penerbit SET Nm_penerbit=? WHERE Kode_penerbit=?";
-    final String delete = "DELETE FROM penerbit WHERE Kode_penerbit=?";
-    final String cek = "SELECT COUNT(*) FROM penerbit WHERE Kode_penerbit = ?";
+    final String read = "SELECT * FROM admin";
+    final String insert = "INSERT INTO admin(user, password) VALUES (?,?)";
+    final String update = "UPDATE admin SET user=? WHERE password=?";
+    final String delete = "DELETE FROM admin WHERE user=?";
+    final String cek = "SELECT COUNT(*) FROM admin WHERE user = ? AND password = ?";
 
-    public PenerbitDAO() {
+    public AdminDAO() {
         koneksi = Connector.connection();
     }
 
     @Override
-    public void insert(Penerbit p) {
+    public void insert(Admin a) {
         PreparedStatement statement = null;
         try {
             statement = koneksi.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
-            statement.setString(1, p.getKode_penerbit());
-            statement.setString(2, p.getNm_penerbit());
+            statement.setString(1, a.getUser());
+            statement.setString(2, a.getPassword());
             statement.executeUpdate();
 
         } catch (SQLException e) {
@@ -51,12 +51,12 @@ public class PenerbitDAO implements PenerbitImplement {
     }
 
     @Override
-    public void update(Penerbit p) {
+    public void update(Admin a) {
         PreparedStatement statement = null;
         try {
             statement = koneksi.prepareStatement(update);
-            statement.setString(1, p.getNm_penerbit());
-            statement.setString(2, p.getKode_penerbit());
+            statement.setString(1, a.getUser());
+            statement.setString(2, a.getPassword());
             statement.executeUpdate();
 
         } catch (SQLException e) {
@@ -71,13 +71,13 @@ public class PenerbitDAO implements PenerbitImplement {
     }
 
     @Override
-    public void delete(Penerbit p) {
+    public void delete(Admin a) {
         PreparedStatement statement = null;
 
         try {
             statement = koneksi.prepareStatement(delete);
 
-            statement.setString(1, p.getKode_penerbit());
+            statement.setString(1, a.getUser());
             statement.executeUpdate();
 
         } catch (SQLException e) {
@@ -92,10 +92,10 @@ public class PenerbitDAO implements PenerbitImplement {
     }
 
     @Override
-    public boolean cek(Penerbit p) {
+    public boolean cek(Admin a) {
         try{
             PreparedStatement statement = koneksi.prepareStatement(cek);
-            statement.setString(1, p.getKode_penerbit());
+            statement.setString(1, a.getUser());
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
@@ -112,23 +112,23 @@ public class PenerbitDAO implements PenerbitImplement {
     }
 
     @Override
-    public List<Penerbit> getData() {
-        List<Penerbit> p = null;
+    public List<Admin> getData() {
+        List<Admin> a = null;
         try {
-            p = new ArrayList<Penerbit>();
+            a = new ArrayList<Penerbit>();
             Statement ss = koneksi.createStatement();
             ResultSet rs = ss.executeQuery(read);
             while (rs.next()) {
-                Penerbit penerbit1 = new Penerbit();
-                penerbit1.setKode_penerbit(rs.getString("Kode_penerbit"));
-                penerbit1.setNm_penerbit(rs.getString("Nm_penerbit"));
+                Admin admin1 = new Admin();
+                admin1.setUser(rs.getString("user"));
+                admin1.setPassword(rs.getString("password"));
                
-                p.add(penerbit1);
+                a.add(admin1);
             }
 
         } catch (SQLException e) {
-            Logger.getLogger(PenerbitDAO.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(AdminDAO.class.getName()).log(Level.SEVERE, null, e);
         }
-        return p;
+        return a;
     }
 }

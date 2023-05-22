@@ -24,6 +24,9 @@ public class Perpustakaan {
           frame.setVisible(true);
           FrameMahasiswa mahasiswa = new FrameMahasiswa();
             mahasiswa.setVisible(true);
+            
+//            FrameLoginn login = new FrameLoginn();
+//            login.setVisible(true);
     }
     
 }

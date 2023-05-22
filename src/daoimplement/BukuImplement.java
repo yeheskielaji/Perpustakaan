@@ -13,7 +13,7 @@ import models.*;
 public interface BukuImplement {
     public void insert(Buku b);
     public void update(Buku b);
-    public void delete(String kode);
-    public boolean cek(String kode);
+    public void delete(Buku b);
+    public boolean cek(Buku b);
     public List<Buku> getData();
 }

@@ -13,7 +13,6 @@ import models.*;
 public interface PinjamImplement {
     public void insert(Pinjam p);
     public void update(Pinjam p);
-//    public void delete(String nim);
     public boolean ceknim(Pinjam p);
     public boolean cekdobel(Pinjam p);
     public boolean cekbuku(Pinjam p);

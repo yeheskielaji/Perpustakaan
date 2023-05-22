@@ -55,12 +55,14 @@ public class BukuController {
     }
     
     public void delete() {
-        String kode = frame1.getKodebuku().getText();
-        implementBuku.delete(kode);
+        Buku bk = new Buku();
+        bk.setKode_buku(frame1.getKodebuku().getText());
+        implementBuku.delete(bk);
     }
     
     public boolean cek() {
-        String kode = frame1.getKodebuku().getText();
-        return implementBuku.cek(kode);
+        Buku bk = new Buku();
+        bk.setKode_buku(frame1.getKodebuku().getText());
+        return implementBuku.cek(bk);
     }
 }
