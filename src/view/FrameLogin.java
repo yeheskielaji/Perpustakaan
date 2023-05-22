@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-import controller.LoginController;
+import controller.AdminController;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -14,9 +16,10 @@ public class FrameLogin extends javax.swing.JFrame {
     /**
      * Creates new form FrameLogin
      */
+    AdminController pc;
     public FrameLogin() {
         initComponents();
-        LoginController pc = new LoginController(this);
+         pc = new AdminController(this);
     }
 
     /**
@@ -35,6 +38,11 @@ public class FrameLogin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         login.setText("login");
+        login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -66,6 +74,16 @@ public class FrameLogin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+        // TODO add your handling code here:
+        
+        if (username.getText().equals("") || password.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Input blm lengkap", "Error", JOptionPane.ERROR_MESSAGE);
+        } else if(pc.cek()) { 
+            this.dispose();
+        }
+    }//GEN-LAST:event_loginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -107,4 +125,22 @@ public class FrameLogin extends javax.swing.JFrame {
     private javax.swing.JTextField password;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
+
+    public JTextField getPassword() {
+        return password;
+    }
+
+    public void setPassword(JTextField password) {
+        this.password = password;
+    }
+
+    public JTextField getUsername() {
+        return username;
+    }
+
+    public void setUsername(JTextField username) {
+        this.username = username;
+    }
+
+
 }

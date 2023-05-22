@@ -10,7 +10,7 @@ import models.*;
  *
  * @author andra
  */
-public interface AdminImplement {
+public interface LoginImplement {
     public void insert(Admin a);
     public void update(Admin a);
     public void delete(Admin a);

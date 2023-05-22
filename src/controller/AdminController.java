@@ -4,8 +4,8 @@
  */
 package controller;
 import java.util.List;
-import daotabel.AdminDAO;
-import daoimplement.AdminImplement;
+import daoimplement.LoginImplement;
+import daotabel.LoginDAO;
 import models.*;
 import view.FrameLogin;
 
@@ -16,12 +16,12 @@ import view.FrameLogin;
  */
 public class AdminController {
     FrameLogin frame3;
-    AdminImplement implementAdmin;
+    LoginImplement implementAdmin;
     List<Admin> a;
     
     public AdminController(FrameLogin frame3) {
         this.frame3 = frame3;
-        implementAdmin = new AdminDAO();
+        implementAdmin = new LoginDAO();
         a = implementAdmin.getData();
     }
 //    
@@ -50,8 +50,8 @@ public class AdminController {
     
     public boolean cek() {
         Admin aa = new Admin();
-//        aa.setUser(frame3.getUsername().getText());
-//        aa.setPassword(frame3.getPassword().getText());
+        aa.setUser(frame3.getUsername().getText());
+        aa.setPassword(frame3.getPassword().getText());
         return implementAdmin.cek(aa);
     }
 }
