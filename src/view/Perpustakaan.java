@@ -19,10 +19,11 @@ public class Perpustakaan {
 //        utama.setVisible(true);
 //        utama.setLocationRelativeTo(null);
 //      
-        FrameMahasiswa mahasiswa = new FrameMahasiswa();
-        mahasiswa.setVisible(true);
+        
           FrameInput frame = new FrameInput();
           frame.setVisible(true);
+          FrameMahasiswa mahasiswa = new FrameMahasiswa();
+            mahasiswa.setVisible(true);
     }
     
 }
