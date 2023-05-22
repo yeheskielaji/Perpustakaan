@@ -36,30 +36,33 @@ public class FrameRegister extends javax.swing.JFrame {
         username = new javax.swing.JTextField();
         password = new javax.swing.JTextField();
         login = new javax.swing.JButton();
-        label = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        message = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1100, 700));
         getContentPane().setLayout(null);
         getContentPane().add(username);
-        username.setBounds(390, 360, 320, 40);
+        username.setBounds(390, 330, 320, 40);
         username.setDocument(new JTextFieldLimit(20));
         getContentPane().add(password);
-        password.setBounds(390, 300, 320, 40);
+        password.setBounds(390, 390, 320, 40);
         password.setDocument(new JTextFieldLimit(20));
 
-        login.setText("Register");
+        login.setBackground(new java.awt.Color(0, 102, 51));
+        login.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        login.setForeground(new java.awt.Color(255, 255, 255));
+        login.setText("REGISTER");
         login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginActionPerformed(evt);
             }
         });
         getContentPane().add(login);
-        login.setBounds(490, 420, 120, 40);
-        getContentPane().add(label);
-        label.setBounds(490, 380, 117, 14);
+        login.setBounds(490, 450, 120, 30);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desain/icon/home.png"))); // NOI18N
         jButton1.setMaximumSize(new java.awt.Dimension(50, 50));
@@ -71,6 +74,18 @@ public class FrameRegister extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1);
         jButton1.setBounds(10, 610, 80, 50);
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setText("username");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(390, 310, 60, 16);
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setText("password");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(390, 370, 60, 16);
+        getContentPane().add(message);
+        message.setBounds(460, 290, 160, 16);
 
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desain/backgound/backgroundregister.png"))); // NOI18N
@@ -93,7 +108,7 @@ public class FrameRegister extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "username sudah ada", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
             pc.insert();
-            label.setText("Register Berhasil");
+            message.setText("Register Berhasil");
         }
     }//GEN-LAST:event_loginActionPerformed
 
@@ -140,8 +155,10 @@ public class FrameRegister extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel label;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JButton login;
+    private javax.swing.JLabel message;
     private javax.swing.JTextField password;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables

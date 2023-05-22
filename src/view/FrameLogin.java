@@ -47,7 +47,10 @@ public class FrameLogin extends javax.swing.JFrame {
         password.setBounds(120, 190, 159, 28);
         password.setDocument(new JTextFieldLimit(20));
 
-        login.setText("login");
+        login.setBackground(new java.awt.Color(0, 102, 51));
+        login.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        login.setForeground(new java.awt.Color(255, 255, 255));
+        login.setText("LOGIN");
         login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginActionPerformed(evt);

@@ -76,16 +76,16 @@ public class FrameInput extends javax.swing.JFrame {
         setType(java.awt.Window.Type.UTILITY);
         getContentPane().setLayout(null);
 
-        jTabbedPane2.setBackground(new java.awt.Color(0, 71, 171));
+        jTabbedPane2.setBackground(new java.awt.Color(0, 102, 51));
         jTabbedPane2.setForeground(new java.awt.Color(255, 255, 255));
         jTabbedPane2.setDoubleBuffered(true);
         jTabbedPane2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jTabbedPane2.setInheritsPopupMenu(true);
 
-        jPanel1.setBackground(new java.awt.Color(100, 149, 237));
+        jPanel1.setBackground(new java.awt.Color(127, 144, 147));
         jPanel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
-        btnDelete.setBackground(new java.awt.Color(255, 0, 0));
+        btnDelete.setBackground(new java.awt.Color(153, 0, 0));
         btnDelete.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desain/icon/delete.png"))); // NOI18N
@@ -118,7 +118,7 @@ public class FrameInput extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabelBuku);
 
-        btnUpdate.setBackground(new java.awt.Color(0, 136, 255));
+        btnUpdate.setBackground(new java.awt.Color(0, 102, 153));
         btnUpdate.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desain/icon/edit.png"))); // NOI18N
@@ -133,7 +133,7 @@ public class FrameInput extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("KODE BUKU          :");
 
-        btnSimpan.setBackground(new java.awt.Color(50, 205, 50));
+        btnSimpan.setBackground(new java.awt.Color(0, 102, 51));
         btnSimpan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnSimpan.setForeground(new java.awt.Color(255, 255, 255));
         btnSimpan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desain/icon/save.png"))); // NOI18N

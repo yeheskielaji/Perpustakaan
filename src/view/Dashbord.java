@@ -32,91 +32,72 @@ public class Dashbord extends javax.swing.JFrame {
         pbuku = new javax.swing.JButton();
         kbuku = new javax.swing.JButton();
         ibuku = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
-        logout.setText("Log Out");
+        logout.setText("LOGOUT");
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutActionPerformed(evt);
             }
         });
+        getContentPane().add(logout);
+        logout.setBounds(940, 620, 146, 52);
 
-        reg.setText("Registrasi Admin");
+        reg.setText("REGISTER");
         reg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 regActionPerformed(evt);
             }
         });
+        getContentPane().add(reg);
+        reg.setBounds(0, 620, 146, 52);
 
-        imhs.setText("Input Data Mahasiswa");
+        imhs.setText("INPUT MAHASISWA");
         imhs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 imhsActionPerformed(evt);
             }
         });
+        getContentPane().add(imhs);
+        imhs.setBounds(480, 410, 136, 52);
 
-        pbuku.setText("Pinjam Buku");
+        pbuku.setText("PINJAM BUKU");
         pbuku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pbukuActionPerformed(evt);
             }
         });
+        getContentPane().add(pbuku);
+        pbuku.setBounds(470, 320, 146, 52);
 
-        kbuku.setText("Kembali Buku");
+        kbuku.setText("PENGEMBALIAN BUKU");
         kbuku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 kbukuActionPerformed(evt);
             }
         });
+        getContentPane().add(kbuku);
+        kbuku.setBounds(660, 320, 193, 52);
 
-        ibuku.setText("Input Data Buku");
+        ibuku.setText("INPUT DATA BUKU");
         ibuku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ibukuActionPerformed(evt);
             }
         });
+        getContentPane().add(ibuku);
+        ibuku.setBounds(290, 320, 140, 52);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 54, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(ibuku, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
-                        .addComponent(pbuku, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(kbuku, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(180, 180, 180)
-                        .addComponent(imhs)
-                        .addGap(94, 94, 94)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(reg, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 78, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ibuku, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pbuku, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(kbuku, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(imhs, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(50, 50, 50)
-                                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(reg, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-        );
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desain/backgound/backgroundregister.png"))); // NOI18N
+        jLabel13.setMaximumSize(new java.awt.Dimension(1090, 670));
+        jLabel13.setMinimumSize(new java.awt.Dimension(1090, 670));
+        jLabel13.setPreferredSize(new java.awt.Dimension(1090, 670));
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(0, 0, 1090, 670);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -207,6 +188,7 @@ public class Dashbord extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ibuku;
     private javax.swing.JButton imhs;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JButton kbuku;
     private javax.swing.JButton logout;
     private javax.swing.JButton pbuku;
