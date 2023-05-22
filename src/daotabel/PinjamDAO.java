@@ -25,12 +25,14 @@ public class PinjamDAO implements PinjamImplement {
     final String read = "SELECT * FROM pinjam where Tgl_kembali IS NULL";
     final String insert = "INSERT INTO pinjam(Tgl_pinjam, Mhs_nim, Buk_kode_buku, Tgl_hrs_kembali) VALUES (?,?,?,?);";
     final String update = "UPDATE buku SET Jml_buku=Jml_buku-1 WHERE Kode_buku=?;";
-//    final String update = "UPDATE pinjam SET Tgl_pinjam=?,Mhs_nim=?,Buk_kode_buku=?,Tgl_hrs_kembali=?,Tgl_kembali=? WHERE Nim=?";
-//    final String delete = "DELETE FROM mahasiswa WHERE Nim=?";
     final String cariNim = "SELECT * FROM pinjam WHERE Mhs_nim = ? AND Tgl_kembali IS NULL";
     final String cekBuku = "SELECT Jml_buku FROM buku WHERE Kode_buku = ?";
     final String cekNim = "SELECT COUNT(*) FROM pinjam WHERE Mhs_nim = ? AND Tgl_kembali IS NULL";
     final String cekdobel = "SELECT COUNT(*) FROM pinjam WHERE Mhs_nim=? AND Buk_kode_buku=? AND Tgl_kembali IS NULL";
+    
+    final String readkembali = "SELECT * FROM pinjam where Tgl_kembali IS NOT NULL";
+    final String insertkembali = "UPDATE pinjam SET Tgl_kembali=? WHERE Mhs_nim=? AND Buk_kode_buku = ? AND Tgl_kembali IS NULL";
+    final String updatekembali = "UPDATE buku SET Jml_buku=Jml_buku+1 WHERE Kode_buku=?;";
 
     public PinjamDAO() {
         koneksi = Connector.connection();
@@ -76,28 +78,9 @@ public class PinjamDAO implements PinjamImplement {
             }
         }
     }
-//
-//    @Override
-//    public void delete(String nim) {
-//        PreparedStatement statement = null;
-//
-//        try {
-//            statement = koneksi.prepareStatement(delete);
-//
-//            statement.setString(1, nim);
-//            statement.executeUpdate();
-//
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        } finally {
-//            try {
-//                statement.close();
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
 
+    
+    
     @Override
     public boolean ceknim(Pinjam p) {
         try {
@@ -211,4 +194,67 @@ public class PinjamDAO implements PinjamImplement {
         return p;
     }
 
+    @Override
+    public void insertkembali(Pinjam p) {
+        PreparedStatement statement = null;
+        try {
+            statement = koneksi.prepareStatement(insertkembali);
+            statement.setDate(1, p.getTgl_kembali());
+            statement.setString(2, p.getMhs_nim());
+            statement.setString(3, p.getBuk_kode_buku());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                statement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void updatekembali(Pinjam p) {
+        PreparedStatement statement = null;
+        try {
+            statement = koneksi.prepareStatement(updatekembali);
+            statement.setString(1, p.getBuk_kode_buku());
+
+            statement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                statement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    
+    @Override
+    public List<Pinjam> getDatakembali() {
+        List<Pinjam> p = null;
+        try {
+            p = new ArrayList<Pinjam>();
+            Statement ss = koneksi.createStatement();
+            ResultSet rs = ss.executeQuery(readkembali);
+            while (rs.next()) {
+                Pinjam ppi = new Pinjam();
+                ppi.setTgl_pinjam(rs.getDate("Tgl_pinjam"));
+                ppi.setMhs_nim(rs.getString("Mhs_nim"));
+                ppi.setBuk_kode_buku(rs.getString("Buk_kode_buku"));
+                ppi.setTgl_hrs_kembali(rs.getDate("Tgl_hrs_kembali"));
+                ppi.setTgl_kembali(rs.getDate("Tgl_kembali"));
+                p.add(ppi);
+            }
+
+        } catch (SQLException e) {
+            Logger.getLogger(PinjamDAO.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return p;
+    }
+    
 }

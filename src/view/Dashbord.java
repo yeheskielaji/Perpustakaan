@@ -99,7 +99,7 @@ public class Dashbord extends javax.swing.JFrame {
         getContentPane().add(jLabel13);
         jLabel13.setBounds(0, 0, 1090, 670);
 
-        pack();
+        setBounds(0, 0, 1108, 707);
     }// </editor-fold>//GEN-END:initComponents
 
     private void ibukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ibukuActionPerformed

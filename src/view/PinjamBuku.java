@@ -26,6 +26,7 @@ public class PinjamBuku extends javax.swing.JFrame {
         initComponents();
         pc = new PinjamController(this);
         pc.isitabel();
+        pc.isitabelkembali();
     }
 
     /**
@@ -54,6 +55,11 @@ public class PinjamBuku extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
+        nimkembali = new javax.swing.JTextField();
+        kode_bukukembali = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        kembalikan = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -189,6 +195,11 @@ public class PinjamBuku extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jLabel5.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
@@ -232,7 +243,47 @@ public class PinjamBuku extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel3);
-        jPanel3.setBounds(16, 32, 743, 332);
+        jPanel3.setBounds(16, 32, 743, 334);
+
+        nimkembali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nimkembaliActionPerformed(evt);
+            }
+        });
+        getContentPane().add(nimkembali);
+        nimkembali.setBounds(70, 440, 64, 22);
+        getContentPane().add(kode_bukukembali);
+        kode_bukukembali.setBounds(70, 500, 64, 22);
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
+            }
+        ));
+        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable2MouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(jTable2);
+
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(420, 390, 493, 240);
+
+        kembalikan.setText("Kembalikan");
+        kembalikan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kembalikanActionPerformed(evt);
+            }
+        });
+        getContentPane().add(kembalikan);
+        kembalikan.setBounds(60, 530, 92, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -272,6 +323,39 @@ public class PinjamBuku extends javax.swing.JFrame {
         // TODO add your handling code here:
         pc.isitabel();
     }//GEN-LAST:event_resetActionPerformed
+
+    private void nimkembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nimkembaliActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nimkembaliActionPerformed
+
+    private void kembalikanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembalikanActionPerformed
+        // TODO add your handling code here:
+        if (nim.getText().equals("") || kode_buku.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Input blm lengkap", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            pc.insertkembali();
+            pc.updatekembali();
+        }
+
+        pc.isitabelkembali();
+    }//GEN-LAST:event_kembalikanActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        int baris = jTable1.getSelectedRow();
+
+        nim.setText(jTable1.getValueAt(baris, 1).toString());
+        kode_buku.setText(jTable1.getValueAt(baris, 2).toString());
+        tgl_kembali.setDate((java.util.Date) jTable1.getValueAt(baris, 3));
+    }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
+        // TODO add your handling code here:
+        int baris = jTable2.getSelectedRow();
+
+        nimkembali.setText(jTable2.getValueAt(baris, 1).toString());
+        kode_bukukembali.setText(jTable2.getValueAt(baris, 2).toString());
+    }//GEN-LAST:event_jTable2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -319,10 +403,15 @@ public class PinjamBuku extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JButton kembali;
+    private javax.swing.JButton kembalikan;
     private javax.swing.JTextField kode_buku;
+    private javax.swing.JTextField kode_bukukembali;
     private javax.swing.JTextField nim;
+    private javax.swing.JTextField nimkembali;
     private javax.swing.JButton pinjam;
     private javax.swing.JButton reset;
     private com.toedter.calendar.JDateChooser tgl_kembali;
@@ -368,4 +457,31 @@ public class PinjamBuku extends javax.swing.JFrame {
         this.jTable1 = jTable1;
     }
 
+    public JTable getjTable2() {
+        return jTable2;
+    }
+
+    public void setjTable2(JTable jTable2) {
+        this.jTable2 = jTable2;
+    }
+
+    public JTextField getKode_bukukembali() {
+        return kode_bukukembali;
+    }
+
+    public void setKode_bukukembali(JTextField kode_bukukembali) {
+        this.kode_bukukembali = kode_bukukembali;
+    }
+
+    public JTextField getNimkembali() {
+        return nimkembali;
+    }
+
+    public void setNimkembali(JTextField nimkembali) {
+        this.nimkembali = nimkembali;
+    }
+
+    
+    
+    
 }

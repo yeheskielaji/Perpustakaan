@@ -50,11 +50,6 @@ public class PinjamController {
         pi.setBuk_kode_buku(frame4.getKode_buku().getText());
         implementPinjam.update(pi);
     }
-//    
-//    public void delete() {
-//        String nim = frame4.getNim().getText();
-//        implementPinjam.delete(nim);
-//    }
 
     public boolean ceknim() {
         Pinjam pi = new Pinjam();
@@ -82,5 +77,29 @@ public class PinjamController {
         PinjamModel pp = new PinjamModel(pi);
         frame4.getjTable1().setModel(pp);
     }
+    
+    public void isitabelkembali() {
+        pi = implementPinjam.getDatakembali();
+        PinjamModel pp = new PinjamModel(pi);
+        frame4.getjTable2().setModel(pp);
+    }
+    
+    public void insertkembali() {
+        java.sql.Date date = new java.sql.Date(System.currentTimeMillis());
+        
+        Pinjam pi = new Pinjam();
+        pi.setTgl_kembali(date);
+        pi.setMhs_nim(frame4.getNimkembali().getText());
+        pi.setBuk_kode_buku(frame4.getKode_bukukembali().getText()); 
+        
+        implementPinjam.insertkembali(pi);
+    }
+    
+    public void updatekembali() {
+        Pinjam pi = new Pinjam();
+        pi.setBuk_kode_buku(frame4.getKode_bukukembali().getText());
 
+        
+        implementPinjam.updatekembali(pi);
+    }
 }
