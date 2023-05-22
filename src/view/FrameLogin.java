@@ -84,6 +84,10 @@ public class FrameLogin extends javax.swing.JFrame {
         if (username.getText().equals("") || password.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Input blm lengkap", "Error", JOptionPane.ERROR_MESSAGE);
         } else if(pc.cek()) { 
+            Dashbord dashboard = new Dashbord();
+            dashboard.setLocationRelativeTo(null);
+            dashboard.setVisible(true);
+            
             this.dispose();
         }
     }//GEN-LAST:event_loginActionPerformed
