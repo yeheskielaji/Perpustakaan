@@ -40,7 +40,7 @@ public class MahasiswaDAO implements MahasiswaImplement {
             statement.setString(3, m.getAlamat());
             statement.setString(4, m.getKota());
 //            statement.setString(5, m.getTglLhr());
-            statement.setDate(5, java.sql.Date.valueOf(m.getTglLhr()));
+            statement.setDate(5, m.getTglLhr());
             statement.setString(6, m.getJenis_kel());
             statement.executeUpdate();
 
@@ -63,7 +63,7 @@ public class MahasiswaDAO implements MahasiswaImplement {
             statement.setString(1, m.getNama());
             statement.setString(2, m.getAlamat());
             statement.setString(3, m.getKota());
-            statement.setDate(4, java.sql.Date.valueOf(m.getTglLhr()));
+            statement.setDate(4, m.getTglLhr());
             statement.setString(5, m.getJenis_kel());
             statement.setString(6, m.getNim());
 
@@ -136,7 +136,7 @@ public class MahasiswaDAO implements MahasiswaImplement {
                 mhs1.setNama(rs.getString("Nama"));
                 mhs1.setAlamat(rs.getString("Alamat"));
                 mhs1.setKota(rs.getString("Kota"));
-                mhs1.setTglLhr(rs.getString("TglLhr"));
+                mhs1.setTglLhr(rs.getDate("TglLhr"));
                 mhs1.setJenis_kel(rs.getString("Jenis_kel"));
                 m.add(mhs1);
             }

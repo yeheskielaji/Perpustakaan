@@ -4,9 +4,14 @@
  */
 package view;
 
+import com.toedter.calendar.JDateChooser;
 import controller.MahasiswaController;
 import java.awt.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,6 +24,7 @@ public class FrameMahasiswa extends javax.swing.JFrame {
      */
     MahasiswaController mc;
     private String Jenis_kel;
+
     public FrameMahasiswa() {
         initComponents();
         mc = new MahasiswaController(this);
@@ -42,7 +48,6 @@ public class FrameMahasiswa extends javax.swing.JFrame {
         btnDelete = new javax.swing.JButton();
         perempuan = new javax.swing.JRadioButton();
         nim = new javax.swing.JTextField();
-        TglLhr = new javax.swing.JFormattedTextField();
         btnUpdate = new javax.swing.JButton();
         nama = new javax.swing.JTextField();
         btnSimpan = new javax.swing.JButton();
@@ -57,6 +62,7 @@ public class FrameMahasiswa extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        TglLhr = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,8 +106,6 @@ public class FrameMahasiswa extends javax.swing.JFrame {
                 nimActionPerformed(evt);
             }
         });
-
-        TglLhr.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("y-MM-dd"))));
 
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -189,23 +193,22 @@ public class FrameMahasiswa extends javax.swing.JFrame {
                                 .addGap(4, 4, 4))
                             .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(nim)
-                        .addComponent(nama)
-                        .addComponent(alamat)
-                        .addComponent(kota)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(btnSimpan)
-                            .addGap(18, 18, 18)
-                            .addComponent(btnUpdate))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGap(44, 44, 44)
-                            .addComponent(btnDelete))
-                        .addComponent(TglLhr, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(perempuan)
                     .addComponent(laki)
-                    .addComponent(perempuan))
-                .addContainerGap())
+                    .addComponent(nim)
+                    .addComponent(nama)
+                    .addComponent(alamat)
+                    .addComponent(kota)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnSimpan)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnUpdate))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(btnDelete))
+                    .addComponent(TglLhr, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(28, 28, 28))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,16 +230,16 @@ public class FrameMahasiswa extends javax.swing.JFrame {
                     .addComponent(kota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TglLhr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12))
-                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12)
+                    .addComponent(TglLhr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(laki)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(perempuan))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(perempuan)))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSimpan)
@@ -275,7 +278,7 @@ public class FrameMahasiswa extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         pack();
@@ -288,15 +291,17 @@ public class FrameMahasiswa extends javax.swing.JFrame {
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
         // TODO add your handling code here:
 
-        if (nim.getText().equals("")||nama.getText().equals("")||alamat.getText().equals("")||kota.getText().equals("")||TglLhr.getText().equals("")||(!laki.isSelected()&&!perempuan.isSelected())) {
+        if (nim.getText().equals("") || nama.getText().equals("") || alamat.getText().equals("") || kota.getText().equals("") || TglLhr.getDate() == null || (!laki.isSelected() && !perempuan.isSelected())) {
             JOptionPane.showMessageDialog(null, "Input blm lengkap", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
             if (mc.cek()) {
-                    JOptionPane.showMessageDialog(null, "NIM Sudah Ada", "Error", JOptionPane.ERROR_MESSAGE);
-            } else  mc.insert();
+                JOptionPane.showMessageDialog(null, "NIM Sudah Ada", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                mc.insert();
+            }
         }
-            mc.isitabel();    
-        
+        mc.isitabel();
+
     }//GEN-LAST:event_btnSimpanActionPerformed
 
     private void nimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nimActionPerformed
@@ -305,17 +310,24 @@ public class FrameMahasiswa extends javax.swing.JFrame {
 
     private void tabelMahasiswaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelMahasiswaMouseClicked
         // TODO add your handling code here:
-        int baris = tabelMahasiswa.getSelectedRow();
-        nim.setText(tabelMahasiswa.getValueAt(baris, 0).toString());
-        nama.setText(tabelMahasiswa.getValueAt(baris, 1).toString());
-        alamat.setText(tabelMahasiswa.getValueAt(baris, 2).toString());
-        kota.setText(tabelMahasiswa.getValueAt(baris, 3).toString());
-        TglLhr.setText(tabelMahasiswa.getValueAt(baris, 4).toString());
-        Jenis_kel = tabelMahasiswa.getValueAt(baris, 5).toString();
-        
-        if (Jenis_kel.equals("L")) {
-            laki.setSelected(true);
-        } else  perempuan.setSelected(true);
+
+            int baris = tabelMahasiswa.getSelectedRow();
+
+            nim.setText(tabelMahasiswa.getValueAt(baris, 0).toString());
+            nama.setText(tabelMahasiswa.getValueAt(baris, 1).toString());
+            alamat.setText(tabelMahasiswa.getValueAt(baris, 2).toString());
+            kota.setText(tabelMahasiswa.getValueAt(baris, 3).toString());
+            TglLhr.setDate((java.util.Date) tabelMahasiswa.getValueAt(baris, 4));
+            Jenis_kel = tabelMahasiswa.getValueAt(baris, 5).toString();
+
+            if (Jenis_kel.equals("L")) {
+                laki.setSelected(true);
+            } else {
+                perempuan.setSelected(true);
+            }
+
+
+
     }//GEN-LAST:event_tabelMahasiswaMouseClicked
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
@@ -379,7 +391,7 @@ public class FrameMahasiswa extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JFormattedTextField TglLhr;
+    private com.toedter.calendar.JDateChooser TglLhr;
     private javax.swing.JTextField alamat;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSimpan;
@@ -412,13 +424,15 @@ public class FrameMahasiswa extends javax.swing.JFrame {
         this.Jenis_kel = Jenis_kel;
     }
 
-    public JFormattedTextField getTglLhr() {
+    public JDateChooser getTglLhr() {
         return TglLhr;
     }
 
-    public void setTglLhr(JFormattedTextField TglLhr) {
+    public void setTglLhr(JDateChooser TglLhr) {
         this.TglLhr = TglLhr;
     }
+
+    
 
     public JTextField getAlamat() {
         return alamat;
@@ -459,9 +473,5 @@ public class FrameMahasiswa extends javax.swing.JFrame {
     public void setTabelMahasiswa(JTable tabelMahasiswa) {
         this.tabelMahasiswa = tabelMahasiswa;
     }
-
-    
-    
-    
 
 }

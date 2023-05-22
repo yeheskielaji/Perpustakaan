@@ -4,6 +4,8 @@
  */
 package models;
 
+import java.sql.Date;
+
 /**
  *
  * @author andra
@@ -13,7 +15,7 @@ public class Mahasiswa {
     private String Nama;
     private String Alamat;
     private String Kota;
-    private String TglLhr;
+    private Date TglLhr;
     private String Jenis_kel;
 
     public String getNim() {
@@ -48,11 +50,11 @@ public class Mahasiswa {
         this.Kota = Kota;
     }
 
-    public String getTglLhr() {
+    public Date getTglLhr() {
         return TglLhr;
     }
 
-    public void setTglLhr(String TglLhr) {
+    public void setTglLhr(Date TglLhr) {
         this.TglLhr = TglLhr;
     }
 

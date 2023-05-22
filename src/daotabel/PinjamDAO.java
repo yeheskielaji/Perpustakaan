@@ -45,14 +45,7 @@ public class PinjamDAO implements PinjamImplement {
             statement.setString(2, p.getMhs_nim());
             statement.setString(3, p.getBuk_kode_buku());
             statement.setDate(4, p.getTgl_hrs_kembali());
-//            statement.setDate(5, p.getTgl_kembali());
-//            statement.setString(5, m.getTglLhr());
-//            statement.setString(5, p.getBuk_kode_buku());
             statement.executeUpdate();
-
-//            statement = koneksi.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
-//            statement.setString(1, p.getBuk_kode_buku());
-//            statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
