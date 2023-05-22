@@ -120,10 +120,10 @@ public class Dashbord extends javax.swing.JFrame {
 
     private void kbukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kbukuActionPerformed
         // TODO add your handling code here:
-        FrameKembali frame = new FrameKembali();
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
-        this.dispose();
+//        FrameKembali frame = new FrameKembali();
+//        frame.setLocationRelativeTo(null);
+//        frame.setVisible(true);
+//        this.dispose();
     }//GEN-LAST:event_kbukuActionPerformed
 
     private void imhsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imhsActionPerformed
