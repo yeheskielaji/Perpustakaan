@@ -68,7 +68,6 @@ public class FrameInput extends javax.swing.JFrame {
         btnSimpan1 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -404,24 +403,13 @@ public class FrameInput extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(0, 620, 80, 50);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desain/icon/back.png"))); // NOI18N
-        jButton2.setMaximumSize(new java.awt.Dimension(50, 50));
-        jButton2.setMinimumSize(new java.awt.Dimension(50, 50));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(1010, 620, 80, 50);
-
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desain/backgound/backgroundlogoatas.png"))); // NOI18N
         jLabel10.setPreferredSize(new java.awt.Dimension(1090, 670));
         getContentPane().add(jLabel10);
         jLabel10.setBounds(0, 0, 1090, 670);
 
-        setSize(new java.awt.Dimension(1108, 708));
+        setSize(new java.awt.Dimension(1108, 707));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -512,10 +500,6 @@ public class FrameInput extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -562,7 +546,6 @@ public class FrameInput extends javax.swing.JFrame {
     private javax.swing.JButton btnUpdate;
     private javax.swing.JButton btnUpdate1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

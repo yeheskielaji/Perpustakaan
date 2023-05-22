@@ -63,7 +63,6 @@ public class FrameMahasiswa extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         TglLhr = new com.toedter.calendar.JDateChooser();
-        jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
 
@@ -310,17 +309,6 @@ public class FrameMahasiswa extends javax.swing.JFrame {
         getContentPane().add(jPanel3);
         jPanel3.setBounds(120, 140, 860, 450);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desain/icon/back.png"))); // NOI18N
-        jButton2.setMaximumSize(new java.awt.Dimension(50, 50));
-        jButton2.setMinimumSize(new java.awt.Dimension(50, 50));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(1000, 610, 80, 50);
-
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desain/icon/home.png"))); // NOI18N
         jButton1.setMaximumSize(new java.awt.Dimension(50, 50));
         jButton1.setMinimumSize(new java.awt.Dimension(50, 50));
@@ -409,10 +397,6 @@ public class FrameMahasiswa extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tabelMahasiswaMouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Dashbord frame = new Dashbord();
@@ -467,7 +451,6 @@ public class FrameMahasiswa extends javax.swing.JFrame {
     private javax.swing.JButton btnUpdate;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

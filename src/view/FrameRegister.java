@@ -37,8 +37,18 @@ public class FrameRegister extends javax.swing.JFrame {
         password = new javax.swing.JTextField();
         login = new javax.swing.JButton();
         label = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1100, 700));
+        getContentPane().setLayout(null);
+        getContentPane().add(username);
+        username.setBounds(390, 360, 320, 40);
+        username.setDocument(new JTextFieldLimit(20));
+        getContentPane().add(password);
+        password.setBounds(390, 300, 320, 40);
+        password.setDocument(new JTextFieldLimit(20));
 
         login.setText("Register");
         login.addActionListener(new java.awt.event.ActionListener() {
@@ -46,43 +56,32 @@ public class FrameRegister extends javax.swing.JFrame {
                 loginActionPerformed(evt);
             }
         });
+        getContentPane().add(login);
+        login.setBounds(490, 420, 120, 40);
+        getContentPane().add(label);
+        label.setBounds(490, 380, 117, 14);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(94, 94, 94)
-                        .addComponent(login))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(77, 77, 77)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(username)
-                                .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)))))
-                .addContainerGap(206, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(login)
-                .addGap(18, 18, 18)
-                .addComponent(label, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(109, Short.MAX_VALUE))
-        );
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desain/icon/home.png"))); // NOI18N
+        jButton1.setMaximumSize(new java.awt.Dimension(50, 50));
+        jButton1.setMinimumSize(new java.awt.Dimension(50, 50));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(10, 610, 80, 50);
 
-        username.setDocument(new JTextFieldLimit(20));
-        password.setDocument(new JTextFieldLimit(20));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desain/backgound/backgroundregister.png"))); // NOI18N
+        jLabel13.setMaximumSize(new java.awt.Dimension(1090, 670));
+        jLabel13.setMinimumSize(new java.awt.Dimension(1090, 670));
+        jLabel13.setPreferredSize(new java.awt.Dimension(1090, 670));
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(0, 0, 1090, 670);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
@@ -97,6 +96,10 @@ public class FrameRegister extends javax.swing.JFrame {
             label.setText("Register Berhasil");
         }
     }//GEN-LAST:event_loginActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -135,6 +138,8 @@ public class FrameRegister extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel label;
     private javax.swing.JButton login;
     private javax.swing.JTextField password;

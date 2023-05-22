@@ -20,13 +20,16 @@ public class Perpustakaan {
 //        utama.setLocationRelativeTo(null);
 //      
         
-          FrameInput frame = new FrameInput();
-          frame.setVisible(true);
-          FrameMahasiswa mahasiswa = new FrameMahasiswa();
-            mahasiswa.setVisible(true);
+//          FrameInput frame = new FrameInput();
+//          frame.setVisible(true);
+//          FrameMahasiswa mahasiswa = new FrameMahasiswa();
+//            mahasiswa.setVisible(true);
             
-//            FrameLoginn login = new FrameLoginn();
+//            FrameLogin login = new FrameLogin();
 //            login.setVisible(true);
+            FrameKembali kembali = new FrameKembali();
+            kembali.setVisible(true);
+    }
     }
     
-}
+
