@@ -15,5 +15,6 @@ public interface LoginImplement {
     public void update(Admin a);
     public void delete(Admin a);
     public boolean cek(Admin a);
+    public boolean cekr(Admin a);
     public List<Admin> getData();
 }

@@ -8,6 +8,7 @@ import daoimplement.LoginImplement;
 import daotabel.LoginDAO;
 import models.*;
 import view.FrameLogin;
+import view.FrameRegister;
 
 
 /**
@@ -16,6 +17,7 @@ import view.FrameLogin;
  */
 public class AdminController {
     FrameLogin frame3;
+    FrameRegister frame4;
     LoginImplement implementAdmin;
     List<Admin> a;
     
@@ -24,15 +26,21 @@ public class AdminController {
         implementAdmin = new LoginDAO();
         a = implementAdmin.getData();
     }
-//    
-//    public void insert() {
-//        Admin aa = new Admin();
-//        aa.setKode_penerbit(frame3.getKodepenerbit().getText());
-//        aa.setNm_penerbit(frame3.getNamapenerbit().getText());
-//        
-//        
-//        implementAdmin.insert(pp);
-//    }
+    
+    public AdminController(FrameRegister frame4) {
+        this.frame4 = frame4;
+        implementAdmin = new LoginDAO();
+        a = implementAdmin.getData();
+    }
+    
+    public void insert() {
+        Admin aa = new Admin();
+        aa.setUser(frame4.getUsername().getText());
+        aa.setPassword(frame4.getPassword().getText());
+        
+        
+        implementAdmin.insert(aa);
+    }
 //    
 //    public void update() {
 //        Admin aa = new Admin();
@@ -53,5 +61,11 @@ public class AdminController {
         aa.setUser(frame3.getUsername().getText());
         aa.setPassword(frame3.getPassword().getText());
         return implementAdmin.cek(aa);
+    }
+    public boolean cekr() {
+        Admin aa = new Admin();
+        aa.setUser(frame4.getUsername().getText());
+        aa.setPassword(frame4.getPassword().getText());
+        return implementAdmin.cekr(aa);
     }
 }
