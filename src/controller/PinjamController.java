@@ -81,7 +81,7 @@ public class PinjamController {
     public void isitabelkembali() {
         pi = implementPinjam.getDatakembali();
         PinjamModel pp = new PinjamModel(pi);
-        frame4.getjTable2().setModel(pp);
+        frame4.getjTable1().setModel(pp);
     }
     
     public void insertkembali() {
