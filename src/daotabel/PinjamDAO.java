@@ -30,7 +30,7 @@ public class PinjamDAO implements PinjamImplement {
     final String cariNim = "SELECT * FROM pinjam WHERE Mhs_nim = ? AND Tgl_kembali IS NULL";
     final String cekBuku = "SELECT Jml_buku FROM buku WHERE Kode_buku = ?";
     final String cekNim = "SELECT COUNT(*) FROM pinjam WHERE Mhs_nim = ? AND Tgl_kembali IS NULL";
-    final String cekdobel = "SELECT COUNT(*) FROM pinjam WHERE Mhs_nim=? AND Tgl_kembali IS NULL";
+    final String cekdobel = "SELECT COUNT(*) FROM pinjam WHERE Mhs_nim=? AND Buk_kode_buku=? AND Tgl_kembali IS NULL";
 
     public PinjamDAO() {
         koneksi = Connector.connection();
@@ -108,6 +108,28 @@ public class PinjamDAO implements PinjamImplement {
             if (resultSet.next()) {
                 int count = resultSet.getInt(1);
                 if (count >= 2) {
+                    return true;
+                }
+                System.out.println(count);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    
+    @Override
+    public boolean cekdobel(Pinjam p) {
+        try {
+            PreparedStatement statement = koneksi.prepareStatement(cekdobel);
+            statement.setString(1, p.getMhs_nim());
+            statement.setString(2, p.getBuk_kode_buku());
+            
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                int count = resultSet.getInt(1);
+                if (count >= 1) {
                     return true;
                 }
                 System.out.println(count);

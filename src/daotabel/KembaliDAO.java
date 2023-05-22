@@ -23,15 +23,11 @@ public class KembaliDAO implements PinjamImplement {
     Connection koneksi;
 
     final String read = "SELECT * FROM pinjam where Tgl_kembali IS NOT NULL";
-    final String insert = "INSERT INTO pinjam(Tgl_pinjam, Mhs_nim, Buk_kode_buku, Tgl_hrs_kembali) VALUES (?,?,?,?);";
+    final String insert = "UPDATE pinjam SET Tgl_kembali=? WHERE Mhs_nim=? AND Buk_kode_buku = ? AND Tgl_kembali IS NULL";
     final String update = "UPDATE buku SET Jml_buku=Jml_buku+1 WHERE Kode_buku=?;";
 //    final String update = "UPDATE pinjam SET Tgl_pinjam=?,Mhs_nim=?,Buk_kode_buku=?,Tgl_hrs_kembali=?,Tgl_kembali=? WHERE Nim=?";
 //    final String delete = "DELETE FROM mahasiswa WHERE Nim=?";
     final String cariNim = "SELECT * FROM pinjam WHERE Mhs_nim = ? AND Tgl_kembali IS NULL";
-    final String cekBuku = "SELECT Jml_buku FROM buku WHERE Kode_buku = ?";
-    final String cekNim = "SELECT COUNT(*) FROM pinjam WHERE Mhs_nim = ? AND Tgl_kembali IS NULL";
-    final String cekdobel = "SELECT COUNT(*) FROM pinjam WHERE Mhs_nim=? AND Tgl_kembali IS NULL";
-
     public KembaliDAO() {
         koneksi = Connector.connection();
     }
@@ -41,10 +37,9 @@ public class KembaliDAO implements PinjamImplement {
         PreparedStatement statement = null;
         try {
             statement = koneksi.prepareStatement(insert);
-            statement.setDate(1, p.getTgl_pinjam());
+            statement.setDate(1, p.getTgl_kembali());
             statement.setString(2, p.getMhs_nim());
             statement.setString(3, p.getBuk_kode_buku());
-            statement.setDate(4, p.getTgl_hrs_kembali());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -76,49 +71,6 @@ public class KembaliDAO implements PinjamImplement {
             }
         }
     }
-
-    @Override
-    public boolean ceknim(Pinjam p) {
-        try {
-            PreparedStatement statement = koneksi.prepareStatement(cekNim);
-            statement.setString(1, p.getMhs_nim());
-            ResultSet resultSet = statement.executeQuery();
-
-            if (resultSet.next()) {
-                int count = resultSet.getInt(1);
-                if (count >= 2) {
-                    return true;
-                }
-                System.out.println(count);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    @Override
-    public boolean cekbuku(Pinjam p) {
-        int count = 0;
-        try {
-
-            PreparedStatement statement = koneksi.prepareStatement(cekBuku);
-            statement.setString(1, p.getBuk_kode_buku());
-            ResultSet resultSet = statement.executeQuery();
-            if (resultSet.next()) {
-                count = resultSet.getInt("Jml_buku");
-            }
-//            System.out.println(count);
-
-            if (count == 0) {
-                return true;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
     @Override
     public List<Pinjam> carinim(Pinjam pp) {
         List<Pinjam> p = null;
@@ -166,6 +118,21 @@ public class KembaliDAO implements PinjamImplement {
             Logger.getLogger(KembaliDAO.class.getName()).log(Level.SEVERE, null, e);
         }
         return p;
+    }
+
+    @Override
+    public boolean cekdobel(Pinjam p) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public boolean ceknim(Pinjam p) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public boolean cekbuku(Pinjam p) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }

@@ -199,7 +199,9 @@ public class PinjamBuku extends javax.swing.JFrame {
         if (nim.getText().equals("") || kode_buku.getText().equals("") || tgl_kembali.getDate() == null) {
             JOptionPane.showMessageDialog(null, "Input blm lengkap", "Error", JOptionPane.ERROR_MESSAGE);
         } else if (pc.ceknim()) {
-            JOptionPane.showMessageDialog(null, "NIM Sudah pinjam 2 buku", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, nim.getText()+" Sudah pinjam 2 buku", "Error", JOptionPane.ERROR_MESSAGE);
+        } else if (pc.cekdobel()) {
+            JOptionPane.showMessageDialog(null,nim.getText()+ " Sudah pinjam buku ini", "Error", JOptionPane.ERROR_MESSAGE);
         } else if (pc.cekbuku()) {
             JOptionPane.showMessageDialog(null, "Semua buku ini sudah dipinjam", "Error", JOptionPane.ERROR_MESSAGE);
         } else {

@@ -5,7 +5,7 @@
 package controller;
 import java.util.List;
 import daotabel.KembaliDAO;
-import daoimplement.KembaliImplement;
+import daoimplement.PinjamImplement;
 import models.*;
 import view.FrameKembali;
 
@@ -16,7 +16,7 @@ import view.FrameKembali;
  */
 public class KembaliController {
     FrameKembali frame4;
-    KembaliImplement implementKembali;
+    PinjamImplement implementKembali;
     List<Pinjam> pi;
     
     
@@ -34,13 +34,11 @@ public class KembaliController {
     
     public void insert() {
         java.sql.Date date = new java.sql.Date(System.currentTimeMillis());
-        java.sql.Date sqldate = new java.sql.Date(frame4.getTgl_kembali().getDate().getTime());
         
         Pinjam pi = new Pinjam();
-        pi.setTgl_pinjam(date);
+        pi.setTgl_kembali(date);
         pi.setMhs_nim(frame4.getNim().getText());
-        pi.setBuk_kode_buku(frame4.getKode_buku().getText());
-        pi.setTgl_hrs_kembali(sqldate);
+        pi.setBuk_kode_buku(frame4.getKode_buku().getText()); 
         
         implementKembali.insert(pi);
     }
