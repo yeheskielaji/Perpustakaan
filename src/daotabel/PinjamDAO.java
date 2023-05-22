@@ -22,15 +22,15 @@ public class PinjamDAO implements PinjamImplement {
 
     Connection koneksi;
 
-    final String read = "SELECT * FROM pinjam where Tgl_kembali IS NULL";
+    final String read = "SELECT * FROM pinjam where Tgl_kembali IS NOT NULL";
     final String insert = "INSERT INTO pinjam(Tgl_pinjam, Mhs_nim, Buk_kode_buku, Tgl_hrs_kembali) VALUES (?,?,?,?);";
     final String update = "UPDATE buku SET Jml_buku=Jml_buku-1 WHERE Kode_buku=?;";
-    final String cariNim = "SELECT * FROM pinjam WHERE Mhs_nim = ? AND Tgl_kembali IS NULL";
+    final String cariNim = "SELECT * FROM pinjam WHERE Mhs_nim = ?";
     final String cekBuku = "SELECT Jml_buku FROM buku WHERE Kode_buku = ?";
     final String cekNim = "SELECT COUNT(*) FROM pinjam WHERE Mhs_nim = ? AND Tgl_kembali IS NULL";
     final String cekdobel = "SELECT COUNT(*) FROM pinjam WHERE Mhs_nim=? AND Buk_kode_buku=? AND Tgl_kembali IS NULL";
     
-    final String readkembali = "SELECT * FROM pinjam where Tgl_kembali IS NOT NULL";
+    final String readkembali = "SELECT * FROM pinjam where Tgl_kembali IS NULL";
     final String insertkembali = "UPDATE pinjam SET Tgl_kembali=? WHERE Mhs_nim=? AND Buk_kode_buku = ? AND Tgl_kembali IS NULL";
     final String updatekembali = "UPDATE buku SET Jml_buku=Jml_buku+1 WHERE Kode_buku=?;";
 
