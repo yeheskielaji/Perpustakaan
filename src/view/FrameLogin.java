@@ -72,6 +72,9 @@ public class FrameLogin extends javax.swing.JFrame {
                 .addContainerGap(141, Short.MAX_VALUE))
         );
 
+        username.setDocument(new JTextFieldLimit(20));
+        password.setDocument(new JTextFieldLimit(20));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 

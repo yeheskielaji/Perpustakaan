@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -57,8 +57,14 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JTextField" name="username">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="username.setDocument(new JTextFieldLimit(20));"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="password">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="password.setDocument(new JTextFieldLimit(20));"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="login">
       <Properties>
