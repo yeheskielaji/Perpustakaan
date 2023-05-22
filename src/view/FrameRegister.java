@@ -75,17 +75,19 @@ public class FrameRegister extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(10, 610, 80, 50);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("username");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(390, 310, 60, 16);
+        jLabel3.setBounds(390, 310, 80, 20);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("password");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(390, 370, 60, 16);
+        jLabel2.setBounds(390, 370, 80, 20);
+
+        message.setForeground(new java.awt.Color(102, 102, 102));
         getContentPane().add(message);
-        message.setBounds(460, 290, 160, 16);
+        message.setBounds(470, 290, 160, 16);
 
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desain/backgound/backgroundregister.png"))); // NOI18N
@@ -114,6 +116,10 @@ public class FrameRegister extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        Dashbord frame = new Dashbord();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

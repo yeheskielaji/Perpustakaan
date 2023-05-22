@@ -28,15 +28,18 @@ public class Dashbord extends javax.swing.JFrame {
 
         logout = new javax.swing.JButton();
         reg = new javax.swing.JButton();
-        imhs = new javax.swing.JButton();
         pbuku = new javax.swing.JButton();
-        kbuku = new javax.swing.JButton();
+        imhs = new javax.swing.JButton();
         ibuku = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
+        logout.setBackground(new java.awt.Color(102, 0, 0));
+        logout.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        logout.setForeground(new java.awt.Color(255, 255, 255));
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desain/icon/log out.png"))); // NOI18N
         logout.setText("LOGOUT");
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -44,8 +47,11 @@ public class Dashbord extends javax.swing.JFrame {
             }
         });
         getContentPane().add(logout);
-        logout.setBounds(940, 620, 146, 52);
+        logout.setBounds(950, 620, 146, 52);
 
+        reg.setBackground(new java.awt.Color(204, 204, 204));
+        reg.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        reg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desain/icon/registration.png"))); // NOI18N
         reg.setText("REGISTER");
         reg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,41 +61,45 @@ public class Dashbord extends javax.swing.JFrame {
         getContentPane().add(reg);
         reg.setBounds(0, 620, 146, 52);
 
-        imhs.setText("INPUT MAHASISWA");
-        imhs.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                imhsActionPerformed(evt);
-            }
-        });
-        getContentPane().add(imhs);
-        imhs.setBounds(480, 410, 136, 52);
-
-        pbuku.setText("PINJAM BUKU");
+        pbuku.setBackground(new java.awt.Color(127, 144, 147));
+        pbuku.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        pbuku.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desain/icon/pinjam buku.png"))); // NOI18N
+        pbuku.setText("PEMINJAMAN PENGEMBLIAN");
+        pbuku.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         pbuku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pbukuActionPerformed(evt);
             }
         });
         getContentPane().add(pbuku);
-        pbuku.setBounds(470, 320, 146, 52);
+        pbuku.setBounds(730, 300, 290, 190);
 
-        kbuku.setText("PENGEMBALIAN BUKU");
-        kbuku.addActionListener(new java.awt.event.ActionListener() {
+        imhs.setBackground(new java.awt.Color(127, 144, 147));
+        imhs.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        imhs.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desain/icon/people.png"))); // NOI18N
+        imhs.setText("INPUT MAHASISWA");
+        imhs.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        imhs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kbukuActionPerformed(evt);
+                imhsActionPerformed(evt);
             }
         });
-        getContentPane().add(kbuku);
-        kbuku.setBounds(660, 320, 193, 52);
+        getContentPane().add(imhs);
+        imhs.setBounds(120, 300, 290, 190);
 
+        ibuku.setBackground(new java.awt.Color(127, 144, 147));
+        ibuku.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        ibuku.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desain/icon/book.png"))); // NOI18N
         ibuku.setText("INPUT DATA BUKU");
+        ibuku.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ibuku.setMargin(new java.awt.Insets(0, 14, 2, 14));
         ibuku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ibukuActionPerformed(evt);
             }
         });
         getContentPane().add(ibuku);
-        ibuku.setBounds(290, 320, 140, 52);
+        ibuku.setBounds(420, 300, 290, 190);
 
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desain/backgound/backgroundregister.png"))); // NOI18N
@@ -117,14 +127,6 @@ public class Dashbord extends javax.swing.JFrame {
         frame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_pbukuActionPerformed
-
-    private void kbukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kbukuActionPerformed
-        // TODO add your handling code here:
-//        FrameKembali frame = new FrameKembali();
-//        frame.setLocationRelativeTo(null);
-//        frame.setVisible(true);
-//        this.dispose();
-    }//GEN-LAST:event_kbukuActionPerformed
 
     private void imhsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imhsActionPerformed
         // TODO add your handling code here:
@@ -189,7 +191,6 @@ public class Dashbord extends javax.swing.JFrame {
     private javax.swing.JButton ibuku;
     private javax.swing.JButton imhs;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JButton kbuku;
     private javax.swing.JButton logout;
     private javax.swing.JButton pbuku;
     private javax.swing.JButton reg;

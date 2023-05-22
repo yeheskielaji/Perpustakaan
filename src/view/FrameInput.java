@@ -255,10 +255,10 @@ public class FrameInput extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("INPUT DATA BUKU", jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(100, 149, 237));
+        jPanel2.setBackground(new java.awt.Color(127, 144, 147));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
-        btnUpdate1.setBackground(new java.awt.Color(0, 136, 255));
+        btnUpdate1.setBackground(new java.awt.Color(0, 102, 153));
         btnUpdate1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnUpdate1.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desain/icon/edit.png"))); // NOI18N
@@ -273,7 +273,7 @@ public class FrameInput extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("NAMA PENERBIT  :");
 
-        btnDelete1.setBackground(new java.awt.Color(255, 0, 0));
+        btnDelete1.setBackground(new java.awt.Color(153, 0, 0));
         btnDelete1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnDelete1.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desain/icon/delete.png"))); // NOI18N
@@ -312,7 +312,7 @@ public class FrameInput extends javax.swing.JFrame {
             }
         });
 
-        btnSimpan1.setBackground(new java.awt.Color(50, 205, 50));
+        btnSimpan1.setBackground(new java.awt.Color(0, 102, 51));
         btnSimpan1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnSimpan1.setForeground(new java.awt.Color(255, 255, 255));
         btnSimpan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desain/icon/save.png"))); // NOI18N
