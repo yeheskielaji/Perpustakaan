@@ -374,6 +374,8 @@ public class PinjamBuku extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Input blm lengkap", "Error", JOptionPane.ERROR_MESSAGE);
         } else if (pc.ceknim()) {
             JOptionPane.showMessageDialog(null, nim.getText() + " Sudah pinjam 2 buku", "Error", JOptionPane.ERROR_MESSAGE);
+        } else if (pc.cekadanim()) {
+            JOptionPane.showMessageDialog(null,"NIM " + nim.getText() + " Tidak ada", "Error", JOptionPane.ERROR_MESSAGE);
         } else if (pc.cekdobel()) {
             JOptionPane.showMessageDialog(null, nim.getText() + " Sudah pinjam buku ini", "Error", JOptionPane.ERROR_MESSAGE);
         } else if (pc.cekbuku()) {
@@ -401,6 +403,8 @@ public class PinjamBuku extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (nim.getText().equals("") || kode_bukukembali.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Input blm lengkap", "Error", JOptionPane.ERROR_MESSAGE);
+        } else if (pc.cekadanim()) {
+            JOptionPane.showMessageDialog(null,"NIM " + nim.getText() + " Tidak ada", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
             pc.insertkembali();
             pc.updatekembali();

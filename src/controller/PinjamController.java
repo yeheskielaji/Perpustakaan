@@ -99,7 +99,12 @@ public class PinjamController {
         Pinjam pi = new Pinjam();
         pi.setBuk_kode_buku(frame4.getKode_bukukembali().getText());
 
-        
         implementPinjam.updatekembali(pi);
+    }
+    
+    public boolean cekadanim() {
+        Pinjam pi = new Pinjam();
+        pi.setMhs_nim(frame4.getNim().getText());
+        return implementPinjam.cekadanim(pi);
     }
 }

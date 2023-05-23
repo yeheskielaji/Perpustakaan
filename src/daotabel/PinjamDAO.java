@@ -33,6 +33,7 @@ public class PinjamDAO implements PinjamImplement {
     final String readkembali = "SELECT * FROM pinjam where Tgl_kembali IS NULL";
     final String insertkembali = "UPDATE pinjam SET Tgl_kembali=? WHERE Mhs_nim=? AND Buk_kode_buku = ? AND Tgl_kembali IS NULL";
     final String updatekembali = "UPDATE buku SET Jml_buku=Jml_buku+1 WHERE Kode_buku=?;";
+    final String cek = "SELECT COUNT(*) FROM mahasiswa WHERE Nim = ?";
 
     public PinjamDAO() {
         koneksi = Connector.connection();
@@ -255,6 +256,28 @@ public class PinjamDAO implements PinjamImplement {
             Logger.getLogger(PinjamDAO.class.getName()).log(Level.SEVERE, null, e);
         }
         return p;
+    }
+    
+    @Override
+    public boolean cekadanim(Pinjam p) {
+        try{
+            PreparedStatement statement = koneksi.prepareStatement(cek);
+            statement.setString(1, p.getMhs_nim());
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                int count = resultSet.getInt(1);
+                if (count==0) {
+                    return true;
+                }
+//                return count > 0;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+//        System.out.println("aa");
+        return false;
+
     }
     
 }
