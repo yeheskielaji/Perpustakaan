@@ -280,4 +280,24 @@ public class PinjamDAO implements PinjamImplement {
 
     }
     
+    @Override
+    public boolean ceknimkembali(Pinjam p) {
+        try {
+            PreparedStatement statement = koneksi.prepareStatement(cekNim);
+            statement.setString(1, p.getMhs_nim());
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                int count = resultSet.getInt(1);
+                if (count == 0) {
+                    return true;
+                }
+                System.out.println(count);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    
 }

@@ -107,4 +107,10 @@ public class PinjamController {
         pi.setMhs_nim(frame4.getNim().getText());
         return implementPinjam.cekadanim(pi);
     }
+    
+    public boolean ceknimkembali() {
+        Pinjam pi = new Pinjam();
+        pi.setMhs_nim(frame4.getNim().getText());
+        return implementPinjam.ceknimkembali(pi);
+    }
 }

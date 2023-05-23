@@ -34,6 +34,8 @@ public interface PinjamImplement {
     public void updatekembali(Pinjam p);
     
     public boolean cekadanim(Pinjam p);
+    
+    public boolean ceknimkembali(Pinjam p);
 
     
 }
